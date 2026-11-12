@@ -10,6 +10,7 @@ const featureExport = 'export';
 const inventoryConfig = AppConfig(
   appName: 'Housetally',
   tagline: 'Everything you own, ready for an insurance claim',
+  privacyPolicyUrl: 'https://shuklamrajat.github.io/widdle-privacy/housetally/',
   seedColor: Color(0xFFA1452C),
   accentColor: Color(0xFFF2B33D),
   gradientEndColor: Color(0xFF5D2E46),
