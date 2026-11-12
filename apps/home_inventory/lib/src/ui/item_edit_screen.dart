@@ -198,7 +198,12 @@ class _ItemEditScreenState extends ConsumerState<ItemEditScreen> {
         title: Text(widget.item == null ? 'New item' : 'Edit item'),
         actions: [
           if (widget.item != null)
-            IconButton(key: const Key('delete-item'), icon: const Icon(Icons.delete_outline), onPressed: _delete),
+            IconButton(
+              key: const Key('delete-item'),
+              tooltip: 'Delete item',
+              icon: const Icon(Icons.delete_outline),
+              onPressed: _delete,
+            ),
           TextButton(key: const Key('save-item'), onPressed: _busy ? null : _save, child: const Text('Save')),
         ],
       ),
@@ -243,6 +248,7 @@ class _ItemEditScreenState extends ConsumerState<ItemEditScreen> {
                             right: 0,
                             top: 0,
                             child: IconButton(
+                              tooltip: 'Remove picture',
                               icon: const Icon(Icons.close, size: 16),
                               onPressed: () => ref.read(repositoryProvider).removeAttachment(s.att!),
                             ),

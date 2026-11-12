@@ -82,6 +82,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           ),
           IconButton(
             key: const Key('open-settings'),
+            tooltip: 'Settings',
             icon: const Icon(Icons.settings_outlined),
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CoreSettingsScreen())),
           ),
@@ -468,7 +469,11 @@ class RoomScreen extends ConsumerWidget {
               body: 'Add the things in this room. A photo and a price is all it takes.',
             )
           : ItemList(items: items),
-      floatingActionButton: FloatingActionButton(onPressed: onAddItem, child: const Icon(Icons.add)),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Add item',
+        onPressed: onAddItem,
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
