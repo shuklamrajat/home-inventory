@@ -7,5 +7,7 @@ import 'package:path_provider/path_provider.dart';
 /// device.
 QueryExecutor openAppDatabase(String name) => driftDatabase(
   name: name,
-  native: const DriftNativeOptions(databaseDirectory: getApplicationSupportDirectory),
+  native: const DriftNativeOptions(
+    databaseDirectory: getApplicationSupportDirectory,
+  ),
 );
