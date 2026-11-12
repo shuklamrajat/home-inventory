@@ -136,6 +136,7 @@ void main() {
       await shots.take('0_welcome');
       await d.tapKey('onboarding-skip');
       await d.waitFor(find.byKey(const Key('add-room')));
+      await d.skipTour(); // covered by tour_e2e_test.dart
 
       // A room of their own.
       await d.tapKey('add-room');

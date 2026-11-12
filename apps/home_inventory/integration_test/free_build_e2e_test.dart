@@ -70,6 +70,8 @@ void main() {
     try {
       await d.tapKey('onboarding-skip');
       await d.waitFor(find.byKey(const Key('add-room')));
+      await d.skipTour();
+      log.check('desktop build shows no ad', false, d.exists('ad-banner'));
       // 25 items already logged in the Garage, $10 each.
       final garage = (await (db.select(db.rooms)..where((r) => r.name.equals('Garage'))).getSingle()).id;
       for (var n = 1; n <= 25; n++) {

@@ -108,29 +108,31 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         label: const Text('Add item'),
         onPressed: _addItem,
       ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _tab,
-        onDestinationSelected: (i) => setState(() => _tab = i),
-        destinations: const [
-          NavigationDestination(
-            key: Key('tab-rooms'),
-            icon: Icon(Icons.house_outlined),
-            selectedIcon: Icon(Icons.house_rounded),
-            label: 'Rooms',
-          ),
-          NavigationDestination(
-            key: Key('tab-items'),
-            icon: Icon(Icons.inventory_2_outlined),
-            selectedIcon: Icon(Icons.inventory_2_rounded),
-            label: 'Items',
-          ),
-          NavigationDestination(
-            key: Key('tab-warranties'),
-            icon: Icon(Icons.verified_outlined),
-            selectedIcon: Icon(Icons.verified_rounded),
-            label: 'Warranties',
-          ),
-        ],
+      bottomNavigationBar: AdDock(
+        child: NavigationBar(
+          selectedIndex: _tab,
+          onDestinationSelected: (i) => setState(() => _tab = i),
+          destinations: const [
+            NavigationDestination(
+              key: Key('tab-rooms'),
+              icon: Icon(Icons.house_outlined),
+              selectedIcon: Icon(Icons.house_rounded),
+              label: 'Rooms',
+            ),
+            NavigationDestination(
+              key: Key('tab-items'),
+              icon: Icon(Icons.inventory_2_outlined),
+              selectedIcon: Icon(Icons.inventory_2_rounded),
+              label: 'Items',
+            ),
+            NavigationDestination(
+              key: Key('tab-warranties'),
+              icon: Icon(Icons.verified_outlined),
+              selectedIcon: Icon(Icons.verified_rounded),
+              label: 'Warranties',
+            ),
+          ],
+        ),
       ),
     );
   }

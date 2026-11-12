@@ -9,9 +9,9 @@ field, so they are worked into the title, short and full description.
 |---|---|---|
 | App name (30) | Housetally: Home Inventory | 26 |
 | Short description (80) | Home inventory with photos, receipts & warranty tracker. Claim-ready PDF report. | 80 |
-| Full description (4000) | below | 3783 |
+| Full description (4000) | below | 3824 |
 | Category | House & Home (Play) / Lifestyle (App Store) | |
-| Contains ads | No | |
+| Contains ads | Yes: one AdMob banner on the main screen (paid Pro will remove it) | |
 | In-app purchases | Yes: Pro $19.99/year with 7-day free trial, or $39.99 once | |
 | Target search terms | home inventory, insurance inventory, warranty tracker, receipt organizer, belongings list, household inventory, home insurance claim, possessions, valuables | |
 
@@ -41,7 +41,7 @@ end-to-end run, so every screen shows a working app with real data.
 ```text
 If you had to claim on your home insurance tomorrow, could you list everything you own and prove what it cost? Housetally is a home inventory app that makes it easy: snap a photo, add the price, and every item lands in its room with its receipt and warranty, ready for a claim.
 
-No account, no ads, and your photos and details stay on your phone.
+No account, no sign-up, and your photos and details stay on your phone.
 
 ✨ HOW IT WORKS
 1. Pick a room: Living room, Kitchen, Bedroom, Office and Garage are ready, or add your own
@@ -74,7 +74,7 @@ Housetally is a little house that keeps count, so you don't have to. It's design
 
 🔒 PRIVATE BY DEFAULT
 • No account and no sign-up
-• No ads and no tracking
+• One small banner ad; nothing you enter is ever used for ads
 • Your photos and details are stored on your phone and never uploaded by us
 • Delete an item and its photos and receipts are deleted from your phone too
 • Exports only go where you choose to send them

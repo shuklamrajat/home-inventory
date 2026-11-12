@@ -35,6 +35,44 @@ const inventoryConfig = AppConfig(
       body: 'One PDF with photos, values and serial numbers for your insurer. Stays on your phone until you send it.',
     ),
   ],
+  tour: [
+    TourStep(
+      target: 'add-item',
+      icon: Icons.add_box_outlined,
+      title: 'Add what you own',
+      body: 'Tap here for each item: what it cost, which room it is in, a photo of it and its receipt.',
+    ),
+    TourStep(
+      target: 'tab-rooms',
+      icon: Icons.meeting_room_outlined,
+      title: 'Room by room',
+      body: 'See what each room is worth, and add rooms of your own.',
+    ),
+    TourStep(
+      target: 'tab-items',
+      icon: Icons.search,
+      title: 'Every item',
+      body: 'The whole list in one place, with search.',
+    ),
+    TourStep(
+      target: 'tab-warranties',
+      icon: Icons.verified_outlined,
+      title: 'Warranties',
+      body: 'Warranties sorted by when they run out, so none lapses unnoticed.',
+    ),
+    TourStep(
+      target: 'export-menu',
+      icon: Icons.ios_share,
+      title: 'Ready for a claim',
+      body: 'Export an insurance report or a spreadsheet of everything you own.',
+    ),
+    TourStep(
+      target: 'open-settings',
+      icon: Icons.tune,
+      title: 'Settings and Pro',
+      body: 'Currency, theme and Pro features live here. You can take this tour again from Settings any time.',
+    ),
+  ],
   proFeatures: [
     ProFeature(
       id: featureUnlimitedItems,
