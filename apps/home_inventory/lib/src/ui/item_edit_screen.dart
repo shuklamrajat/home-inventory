@@ -31,12 +31,18 @@ class _ItemEditScreenState extends ConsumerState<ItemEditScreen> {
   late final _category = TextEditingController(text: widget.item?.category ?? '');
   late final _brand = TextEditingController(text: widget.item?.brand ?? '');
   late final _serial = TextEditingController(text: widget.item?.serial ?? '');
-  late final _purchased =
-      TextEditingController(text: widget.item?.purchaseDate == null ? '' : isoDate(widget.item!.purchaseDate!));
-  late final _price = TextEditingController(text: widget.item?.priceCents == null ? '' : Money.plain(widget.item!.priceCents!));
-  late final _value = TextEditingController(text: widget.item?.valueCents == null ? '' : Money.plain(widget.item!.valueCents!));
-  late final _warrantyEnds =
-      TextEditingController(text: widget.item?.warrantyExpires == null ? '' : isoDate(widget.item!.warrantyExpires!));
+  late final _purchased = TextEditingController(
+    text: widget.item?.purchaseDate == null ? '' : isoDate(widget.item!.purchaseDate!),
+  );
+  late final _price = TextEditingController(
+    text: widget.item?.priceCents == null ? '' : Money.plain(widget.item!.priceCents!),
+  );
+  late final _value = TextEditingController(
+    text: widget.item?.valueCents == null ? '' : Money.plain(widget.item!.valueCents!),
+  );
+  late final _warrantyEnds = TextEditingController(
+    text: widget.item?.warrantyExpires == null ? '' : isoDate(widget.item!.warrantyExpires!),
+  );
   final _warrantyMonths = TextEditingController();
   late final _notes = TextEditingController(text: widget.item?.notes ?? '');
   int? _roomId;
@@ -66,7 +72,18 @@ class _ItemEditScreenState extends ConsumerState<ItemEditScreen> {
         }
       });
     }
-    for (final c in [_name, _category, _brand, _serial, _purchased, _price, _value, _warrantyEnds, _warrantyMonths, _notes]) {
+    for (final c in [
+      _name,
+      _category,
+      _brand,
+      _serial,
+      _purchased,
+      _price,
+      _value,
+      _warrantyEnds,
+      _warrantyMonths,
+      _notes,
+    ]) {
       c.dispose();
     }
     super.dispose();
@@ -83,18 +100,23 @@ class _ItemEditScreenState extends ConsumerState<ItemEditScreen> {
     final camera = await showModalBottomSheet<bool>(
       context: context,
       builder: (ctx) => SafeArea(
-        child: Column(mainAxisSize: MainAxisSize.min, children: [
-          ListTile(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
               key: const Key('pick-camera'),
               leading: const Icon(Icons.photo_camera_outlined),
               title: const Text('Take a photo'),
-              onTap: () => Navigator.pop(ctx, true)),
-          ListTile(
+              onTap: () => Navigator.pop(ctx, true),
+            ),
+            ListTile(
               key: const Key('pick-library'),
               leading: const Icon(Icons.photo_library_outlined),
               title: const Text('Choose from library'),
-              onTap: () => Navigator.pop(ctx, false)),
-        ]),
+              onTap: () => Navigator.pop(ctx, false),
+            ),
+          ],
+        ),
       ),
     );
     if (camera == null) return;
@@ -109,8 +131,10 @@ class _ItemEditScreenState extends ConsumerState<ItemEditScreen> {
     }
   }
 
-  String? _moneyError(String? v) => (v ?? '').trim().isEmpty || Money.parse(v!) != null ? null : 'Enter an amount like 49.99';
-  String? _optionalDate(String? v) => (v ?? '').trim().isEmpty || parseIsoDate(v!) != null ? null : 'Use a date like 2026-09-01';
+  String? _moneyError(String? v) =>
+      (v ?? '').trim().isEmpty || Money.parse(v!) != null ? null : 'Enter an amount like 49.99';
+  String? _optionalDate(String? v) =>
+      (v ?? '').trim().isEmpty || parseIsoDate(v!) != null ? null : 'Use a date like 2026-09-01';
 
   Future<void> _save() async {
     if (_busy) return;
@@ -161,7 +185,9 @@ class _ItemEditScreenState extends ConsumerState<ItemEditScreen> {
     final rooms = ref.watch(roomsProvider).value ?? const <Room>[];
     final stored = widget.item == null
         ? const <Attachment>[]
-        : (ref.watch(attachmentsProvider).value ?? const <Attachment>[]).where((a) => a.itemId == widget.item!.id).toList();
+        : (ref.watch(attachmentsProvider).value ?? const <Attachment>[])
+              .where((a) => a.itemId == widget.item!.id)
+              .toList();
     final dir = ref.watch(attachmentsPathProvider).value;
     final shown = [
       for (final a in stored) (kind: a.kind, fileName: a.fileName, att: a as Attachment?),
@@ -178,125 +204,172 @@ class _ItemEditScreenState extends ConsumerState<ItemEditScreen> {
       ),
       body: Form(
         key: _form,
-        child: ListView(padding: const EdgeInsets.all(16), children: [
-          Builder(
-            builder: (context) => Wrap(spacing: 8, runSpacing: 8, children: [
-              for (final s in shown)
-                Stack(children: [
-                  Container(
-                    key: Key('thumb-${s.fileName}'),
-                    width: 84,
-                    height: 84,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Colors.black12),
-                    clipBehavior: Clip.antiAlias,
-                    child: dir != null
-                        ? Image.file(File(p.join(dir, s.fileName)),
-                            fit: BoxFit.cover, errorBuilder: (_, _, _) => const Icon(Icons.broken_image))
-                        : null,
-                  ),
-                  Positioned(
-                    left: 4,
-                    bottom: 4,
-                    child: Icon(s.kind == 'receipt' ? Icons.receipt_long : Icons.photo, size: 16, color: Colors.white),
-                  ),
-                  if (s.att != null)
-                    Positioned(
-                      right: 0,
-                      top: 0,
-                      child: IconButton(
-                        icon: const Icon(Icons.close, size: 16),
-                        onPressed: () => ref.read(repositoryProvider).removeAttachment(s.att!),
-                      ),
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            Builder(
+              builder: (context) => Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  for (final s in shown)
+                    Stack(
+                      children: [
+                        Container(
+                          key: Key('thumb-${s.fileName}'),
+                          width: 84,
+                          height: 84,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Colors.black12),
+                          clipBehavior: Clip.antiAlias,
+                          child: dir != null
+                              ? Image.file(
+                                  File(p.join(dir, s.fileName)),
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (_, _, _) => const Icon(Icons.broken_image),
+                                )
+                              : null,
+                        ),
+                        Positioned(
+                          left: 4,
+                          bottom: 4,
+                          child: Icon(
+                            s.kind == 'receipt' ? Icons.receipt_long : Icons.photo,
+                            size: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        if (s.att != null)
+                          Positioned(
+                            right: 0,
+                            top: 0,
+                            child: IconButton(
+                              icon: const Icon(Icons.close, size: 16),
+                              onPressed: () => ref.read(repositoryProvider).removeAttachment(s.att!),
+                            ),
+                          ),
+                      ],
                     ),
-                ]),
-            ]),
-          ),
-          const SizedBox(height: 8),
-          Row(children: [
-            OutlinedButton.icon(
-                key: const Key('add-photo'),
-                icon: const Icon(Icons.add_a_photo_outlined),
-                label: const Text('Photo'),
-                onPressed: () => _pick('photo')),
-            const SizedBox(width: 8),
-            OutlinedButton.icon(
-                key: const Key('add-receipt'),
-                icon: const Icon(Icons.receipt_long),
-                label: const Text('Receipt'),
-                onPressed: () => _pick('receipt')),
-          ]),
-          const SizedBox(height: 12),
-          TextFormField(
-            key: const Key('item-name'),
-            controller: _name,
-            decoration: const InputDecoration(labelText: 'What is it?'),
-            validator: (v) => (v ?? '').trim().isEmpty ? 'Give it a name' : null,
-          ),
-          const SizedBox(height: 12),
-          DropdownButtonFormField<int>(
-            key: const Key('item-room'),
-            initialValue: _roomId,
-            decoration: const InputDecoration(labelText: 'Room'),
-            items: [for (final r in rooms) DropdownMenuItem(value: r.id, child: Text(r.name))],
-            onChanged: (v) => setState(() => _roomId = v),
-            validator: (v) => v == null ? 'Pick a room' : null,
-          ),
-          const SizedBox(height: 12),
-          TextFormField(key: const Key('item-category'), controller: _category, decoration: const InputDecoration(labelText: 'Category')),
-          const SizedBox(height: 12),
-          TextFormField(key: const Key('item-brand'), controller: _brand, decoration: const InputDecoration(labelText: 'Brand')),
-          const SizedBox(height: 12),
-          TextFormField(key: const Key('item-serial'), controller: _serial, decoration: const InputDecoration(labelText: 'Serial number')),
-          const SizedBox(height: 12),
-          TextFormField(
-            key: const Key('item-purchased'),
-            controller: _purchased,
-            decoration: const InputDecoration(labelText: 'Purchase date', hintText: 'YYYY-MM-DD'),
-            validator: _optionalDate,
-          ),
-          const SizedBox(height: 12),
-          TextFormField(
-            key: const Key('item-price'),
-            controller: _price,
-            keyboardType: const TextInputType.numberWithOptions(decimal: true),
-            decoration: const InputDecoration(labelText: 'Price paid'),
-            validator: _moneyError,
-          ),
-          const SizedBox(height: 12),
-          TextFormField(
-            key: const Key('item-value'),
-            controller: _value,
-            keyboardType: const TextInputType.numberWithOptions(decimal: true),
-            decoration: const InputDecoration(labelText: 'Current value (optional)', helperText: 'Leave empty to use the price paid'),
-            validator: _moneyError,
-          ),
-          const SizedBox(height: 12),
-          Row(children: [
-            Expanded(
-              child: TextFormField(
-                key: const Key('item-warranty-months'),
-                controller: _warrantyMonths,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(labelText: 'Warranty (months)'),
-                onChanged: (_) => _applyMonths(),
-                validator: (v) => (v ?? '').trim().isEmpty || int.tryParse(v!.trim()) != null ? null : 'Whole months',
+                ],
               ),
             ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: TextFormField(
-                key: const Key('item-warranty-ends'),
-                controller: _warrantyEnds,
-                decoration: const InputDecoration(labelText: 'Warranty ends', hintText: 'YYYY-MM-DD'),
-                validator: _optionalDate,
-              ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                OutlinedButton.icon(
+                  key: const Key('add-photo'),
+                  icon: const Icon(Icons.add_a_photo_outlined),
+                  label: const Text('Photo'),
+                  onPressed: () => _pick('photo'),
+                ),
+                const SizedBox(width: 8),
+                OutlinedButton.icon(
+                  key: const Key('add-receipt'),
+                  icon: const Icon(Icons.receipt_long),
+                  label: const Text('Receipt'),
+                  onPressed: () => _pick('receipt'),
+                ),
+              ],
             ),
-          ]),
-          const SizedBox(height: 12),
-          TextFormField(key: const Key('item-notes'), controller: _notes, maxLines: 3, decoration: const InputDecoration(labelText: 'Notes')),
-          const SizedBox(height: 16),
-          FilledButton(key: const Key('save-item-bottom'), onPressed: _busy ? null : _save, child: const Text('Save')),
-        ]),
+            const SizedBox(height: 12),
+            TextFormField(
+              key: const Key('item-name'),
+              controller: _name,
+              decoration: const InputDecoration(labelText: 'What is it?'),
+              validator: (v) => (v ?? '').trim().isEmpty ? 'Give it a name' : null,
+            ),
+            const SizedBox(height: 12),
+            DropdownButtonFormField<int>(
+              key: const Key('item-room'),
+              initialValue: _roomId,
+              decoration: const InputDecoration(labelText: 'Room'),
+              items: [for (final r in rooms) DropdownMenuItem(value: r.id, child: Text(r.name))],
+              onChanged: (v) => setState(() => _roomId = v),
+              validator: (v) => v == null ? 'Pick a room' : null,
+            ),
+            const SizedBox(height: 12),
+            TextFormField(
+              key: const Key('item-category'),
+              controller: _category,
+              decoration: const InputDecoration(labelText: 'Category'),
+            ),
+            const SizedBox(height: 12),
+            TextFormField(
+              key: const Key('item-brand'),
+              controller: _brand,
+              decoration: const InputDecoration(labelText: 'Brand'),
+            ),
+            const SizedBox(height: 12),
+            TextFormField(
+              key: const Key('item-serial'),
+              controller: _serial,
+              decoration: const InputDecoration(labelText: 'Serial number'),
+            ),
+            const SizedBox(height: 12),
+            TextFormField(
+              key: const Key('item-purchased'),
+              controller: _purchased,
+              decoration: const InputDecoration(labelText: 'Purchase date', hintText: 'YYYY-MM-DD'),
+              validator: _optionalDate,
+            ),
+            const SizedBox(height: 12),
+            TextFormField(
+              key: const Key('item-price'),
+              controller: _price,
+              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              decoration: const InputDecoration(labelText: 'Price paid'),
+              validator: _moneyError,
+            ),
+            const SizedBox(height: 12),
+            TextFormField(
+              key: const Key('item-value'),
+              controller: _value,
+              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              decoration: const InputDecoration(
+                labelText: 'Current value (optional)',
+                helperText: 'Leave empty to use the price paid',
+              ),
+              validator: _moneyError,
+            ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    key: const Key('item-warranty-months'),
+                    controller: _warrantyMonths,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(labelText: 'Warranty (months)'),
+                    onChanged: (_) => _applyMonths(),
+                    validator: (v) =>
+                        (v ?? '').trim().isEmpty || int.tryParse(v!.trim()) != null ? null : 'Whole months',
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: TextFormField(
+                    key: const Key('item-warranty-ends'),
+                    controller: _warrantyEnds,
+                    decoration: const InputDecoration(labelText: 'Warranty ends', hintText: 'YYYY-MM-DD'),
+                    validator: _optionalDate,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            TextFormField(
+              key: const Key('item-notes'),
+              controller: _notes,
+              maxLines: 3,
+              decoration: const InputDecoration(labelText: 'Notes'),
+            ),
+            const SizedBox(height: 16),
+            FilledButton(
+              key: const Key('save-item-bottom'),
+              onPressed: _busy ? null : _save,
+              child: const Text('Save'),
+            ),
+          ],
+        ),
       ),
     );
   }

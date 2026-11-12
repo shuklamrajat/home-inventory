@@ -1,7 +1,6 @@
 import 'package:intl/intl.dart';
 
-String isoDate(DateTime d) =>
-    '${d.year}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
+String isoDate(DateTime d) => '${d.year}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
 
 String niceDate(DateTime d) => DateFormat('d MMM yyyy').format(d);
 

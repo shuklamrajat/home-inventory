@@ -36,11 +36,11 @@ WarrantyStatus warrantyStatus(DateTime? expires, DateTime now) {
 /// (most recently expired first). Items with no warranty are left out.
 List<String> sortForWarrantyList(List<({String id, DateTime? expires})> items, DateTime now) {
   int rank(WarrantyState s) => switch (s) {
-        WarrantyState.soon => 0,
-        WarrantyState.active => 1,
-        WarrantyState.expired => 2,
-        WarrantyState.none => 3,
-      };
+    WarrantyState.soon => 0,
+    WarrantyState.active => 1,
+    WarrantyState.expired => 2,
+    WarrantyState.none => 3,
+  };
   final withW = items.where((i) => i.expires != null).toList()
     ..sort((a, b) {
       final ra = rank(warrantyStatus(a.expires, now).state), rb = rank(warrantyStatus(b.expires, now).state);

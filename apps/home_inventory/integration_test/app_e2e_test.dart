@@ -42,7 +42,13 @@ const artifactRoot = String.fromEnvironment('ARTIFACT_DIR', defaultValue: 'test-
 /// every stored file is a distinct real image the PDF has to embed.
 class FakePhotoSource implements PhotoSource {
   int picks = 0;
-  static const _colors = [Color(0xFF1E88E5), Color(0xFFE53935), Color(0xFF43A047), Color(0xFFFDD835), Color(0xFF8E24AA)];
+  static const _colors = [
+    Color(0xFF1E88E5),
+    Color(0xFFE53935),
+    Color(0xFF43A047),
+    Color(0xFFFDD835),
+    Color(0xFF8E24AA),
+  ];
 
   @override
   Future<PickedImage?> pick({required bool camera}) async {
@@ -62,6 +68,9 @@ void main() {
 
   testWidgets('30 items, photos, warranties, free limit, delete cleanup, exports', (tester) async {
     WidgetController.hitTestWarningShouldBeFatal = true;
+    Motion.ambient = false; // endless decorative loops would block pumpAndSettle
+    addTearDown(() => Motion.ambient = true);
+    final semantics = tester.ensureSemantics();
     final log = E2eLog('home_inventory: 30 items, photos, warranties, free limit, delete, exports', artifactRoot);
     final tmp = await Directory.systemTemp.createTemp('inv_e2e');
     final attDir = Directory('${tmp.path}/attachments')..createSync();
@@ -75,7 +84,7 @@ void main() {
     final d = E2eDriver(tester);
     final shots = StoreShots(tester)..usePhoneSize();
 
-    await tester.pumpWidget(ProviderScope(
+    Widget app() => ProviderScope(
       overrides: [
         sharedPrefsProvider.overrideWithValue(prefs),
         appConfigProvider.overrideWithValue(inventoryConfig),
@@ -89,8 +98,10 @@ void main() {
         entitlementServiceProvider.overrideWithValue(LocalEntitlementService(prefs, allowDebugPurchase: true)),
       ],
       child: const InventoryApp(),
-    ));
+    );
+    await tester.pumpWidget(app());
     await tester.pumpAndSettle();
+    String spoken(String k) => tester.getSemantics(find.byKey(Key(k))).label;
 
     Future<Item> itemNamed(String n) async => (db.select(db.items)..where((i) => i.name.equals(n))).getSingle();
     Future<int> roomId(String n) async => (await (db.select(db.rooms)..where((r) => r.name.equals(n))).getSingle()).id;
@@ -109,8 +120,9 @@ void main() {
       await d.tapKey(camera ? 'pick-camera' : 'pick-library');
       await d.waitUntil(() => filesOnDisk().length == before + 1, 'stored photo');
       final thumbs = find.byWidgetPredicate(
-          (w) => w.key is ValueKey<String> && (w.key as ValueKey<String>).value.startsWith('thumb-'),
-          skipOffstage: false);
+        (w) => w.key is ValueKey<String> && (w.key as ValueKey<String>).value.startsWith('thumb-'),
+        skipOffstage: false,
+      );
       await d.waitUntil(() => thumbs.evaluate().length == before + 1 - stored, 'thumbnail shown');
     }
 
@@ -121,6 +133,7 @@ void main() {
     }
 
     try {
+      await shots.take('0_welcome');
       await d.tapKey('onboarding-skip');
       await d.waitFor(find.byKey(const Key('add-room')));
 
@@ -128,10 +141,16 @@ void main() {
       await d.tapKey('add-room');
       await tester.enterText(find.byKey(const Key('room-name-field')), 'Basement');
       await d.tapKey('room-add-ok');
-      await d.waitUntil(() => find.text('Basement').evaluate().isNotEmpty, 'Basement room');
+      // The sixth room lands below the fold, so scroll to it as a person would.
+      await Future<void>.delayed(const Duration(milliseconds: 300));
+      await tester.pumpAndSettle();
+      await d.reveal(find.text('Basement'));
       final basement = await roomId('Basement');
-      log.check('rooms after adding Basement', ['Living room', 'Kitchen', 'Bedroom', 'Office', 'Garage', 'Basement'],
-          [for (final r in await db.select(db.rooms).get()) r.name]);
+      log.check(
+        'rooms after adding Basement',
+        ['Living room', 'Kitchen', 'Bedroom', 'Office', 'Garage', 'Basement'],
+        [for (final r in await db.select(db.rooms).get()) r.name],
+      );
 
       // 1. MacBook: two photos and a receipt, warranty from months.
       await d.tapKey('add-item');
@@ -146,8 +165,11 @@ void main() {
       await d.type('item-purchased', '2025-12-01');
       await d.type('item-price', '1,999.00');
       await d.type('item-warranty-months', '12');
-      log.check('MacBook warranty end filled from months', '2025-12-01 + 12 months = 2026-12-01',
-          '2025-12-01 + 12 months = ${tester.widget<TextFormField>(find.byKey(const Key('item-warranty-ends'))).controller!.text}');
+      log.check(
+        'MacBook warranty end filled from months',
+        '2025-12-01 + 12 months = 2026-12-01',
+        '2025-12-01 + 12 months = ${tester.widget<TextFormField>(find.byKey(const Key('item-warranty-ends'))).controller!.text}',
+      );
       await shots.take('3_item');
       await saveAndReturn();
 
@@ -170,8 +192,11 @@ void main() {
       await d.type('item-purchased', '2023-01-31');
       await d.type('item-price', '849');
       await d.type('item-warranty-months', '13');
-      log.check('Dishwasher warranty end clamps to month end', '2024-02-29',
-          tester.widget<TextFormField>(find.byKey(const Key('item-warranty-ends'))).controller!.text);
+      log.check(
+        'Dishwasher warranty end clamps to month end',
+        '2024-02-29',
+        tester.widget<TextFormField>(find.byKey(const Key('item-warranty-ends'))).controller!.text,
+      );
       await saveAndReturn();
 
       // 4. Road bike: a warranty end before purchase is refused first.
@@ -182,8 +207,11 @@ void main() {
       await d.type('item-price', '2400');
       await d.type('item-warranty-ends', '2026-01-01');
       await d.tapKey('save-item');
-      log.check('warranty ending before purchase refused', true,
-          find.text("The warranty can't end before the purchase date.").evaluate().isNotEmpty);
+      log.check(
+        'warranty ending before purchase refused',
+        true,
+        find.text("The warranty can't end before the purchase date.").evaluate().isNotEmpty,
+      );
       log.check('refused item not stored', 3, (await db.select(db.items).get()).length);
       await d.type('item-warranty-months', '60');
       await d.type('item-notes', '=HYPERLINK("http://x"), carbon frame');
@@ -196,6 +224,7 @@ void main() {
       await d.tapKey('export-pdf');
       await d.waitFor(find.byKey(const Key('paywall')));
       log.check('export without Pro opens the paywall', true, d.exists('paywall'));
+      await shots.take('6_pro');
       await tester.pageBack();
       await tester.pumpAndSettle();
       log.check('nothing shared without Pro', 0, sharer.shared.length);
@@ -215,11 +244,26 @@ void main() {
           log.check('dismissed paywall: still 25 items', 25, (await db.select(db.items).get()).length);
           await d.tap(find.byType(FloatingActionButton).last);
           await d.waitFor(find.byKey(const Key('paywall')));
-          await d.tapKey('offer-pro_lifetime');
+          await d.reveal(find.byKey(const Key('offer-pro_lifetime')));
+          await tester.tap(find.byKey(const Key('offer-pro_lifetime')));
+          var sawConfetti = false;
+          final end = DateTime.now().add(const Duration(seconds: 15));
+          while (!d.exists('item-name')) {
+            if (DateTime.now().isAfter(end)) throw StateError('item form did not open after buying Pro');
+            await Future<void>.delayed(const Duration(milliseconds: 10));
+            await tester.pump();
+            sawConfetti |= find.byKey(const Key('celebration')).evaluate().isNotEmpty;
+          }
+          log.check('confetti plays after buying Pro', true, sawConfetti);
+          await tester.pumpAndSettle();
+          log.check('confetti cleared once landed', 0, find.byKey(const Key('celebration')).evaluate().length);
         }
         await d.waitFor(find.byKey(const Key('item-name')));
-        log.check('item $n opens in Basement', basement,
-            tester.widget<DropdownButtonFormField<int>>(find.byKey(const Key('item-room'))).initialValue);
+        log.check(
+          'item $n opens in Basement',
+          basement,
+          tester.widget<DropdownButtonFormField<int>>(find.byKey(const Key('item-room'))).initialValue,
+        );
         await d.type('item-name', 'Item ${n.toString().padLeft(2, '0')}');
         await d.type('item-price', '${n * 10}');
         if (n == 5) await attach('add-photo');
@@ -253,6 +297,13 @@ void main() {
       log.check('attachment files on disk after delete', 4, filesOnDisk().length);
       log.check('total after delete', r'$10,648.00', await d.textOf('total-value'));
       log.check('item count after delete', '29', await d.textOf('item-count'));
+      // Worked by hand: Basement Items 06-30 = 10 x (6+...+30) = 4500; shares of 10648, rounded.
+      log.check(
+        'value-by-room ring after delete',
+        r'Value by room. Basement $4,500.00, 42%. Garage $2,400.00, 23%. Office $1,999.00, 19%. '
+            r'Living room $900.00, 8%. Kitchen $849.00, 8%.',
+        spoken('room-chart'),
+      );
 
       // Search by serial number.
       // Coming back from a closed screen, the field needs a tap before typing,
@@ -260,24 +311,45 @@ void main() {
       await d.tapKey('item-search');
       await d.type('item-search', 'c02xk1');
       final mac = await itemNamed('MacBook Pro 14');
-      log.check('serial search finds only the MacBook', [true, 1],
-          [d.exists('item-${mac.id}'), find.byWidgetPredicate((w) => w is ListTile && '${w.key}'.contains("'item-")).evaluate().length]);
+      log.check(
+        'serial search finds only the MacBook',
+        [true, 1],
+        [
+          d.exists('item-${mac.id}'),
+          find.byWidgetPredicate((w) => w is ListTile && '${w.key}'.contains("'item-")).evaluate().length,
+        ],
+      );
       await d.type('item-search', '');
 
       // Warranties tab.
       await d.tapKey('tab-warranties');
-      final tv = await itemNamed('Samsung TV 65'), dish = await itemNamed('Dishwasher'), bike = await itemNamed('Road bike');
-      final tiles = find.byWidgetPredicate((w) => w is ListTile && '${w.key}'.contains("'warranty-"));
-      final order = tiles.evaluate().map((e) => (e.widget as ListTile).key).toList();
-      log.check('warranty list order', [
-        Key('warranty-${tv.id}'),
-        Key('warranty-${mac.id}'),
-        Key('warranty-${bike.id}'),
-        Key('warranty-${dish.id}'),
-      ].map((k) => '$k').toList(), order.map((k) => '$k').toList());
-      log.check('warranty labels', ['Ends in 9 days', 'Ends in 20 days', 'Active', 'Expired'], [
-        for (final i in [tv, mac, bike, dish]) await d.textOf('warranty-state-${i.id}')
-      ]);
+      final tv = await itemNamed('Samsung TV 65'),
+          dish = await itemNamed('Dishwasher'),
+          bike = await itemNamed('Road bike');
+      final tiles = find.byWidgetPredicate(
+        (w) =>
+            w.key is ValueKey<String> &&
+            (w.key as ValueKey<String>).value.startsWith('warranty-') &&
+            !(w.key as ValueKey<String>).value.startsWith('warranty-state-'),
+      );
+      final order = tiles.evaluate().map((e) => e.widget.key).toList();
+      log.check(
+        'warranty list order',
+        [
+          Key('warranty-${tv.id}'),
+          Key('warranty-${mac.id}'),
+          Key('warranty-${bike.id}'),
+          Key('warranty-${dish.id}'),
+        ].map((k) => '$k').toList(),
+        order.map((k) => '$k').toList(),
+      );
+      log.check(
+        'warranty labels',
+        ['Ends in 9 days', 'Ends in 20 days', 'Active', 'Expired'],
+        [
+          for (final i in [tv, mac, bike, dish]) await d.textOf('warranty-state-${i.id}'),
+        ],
+      );
       await shots.take('2_warranties');
 
       // Exports, now with Pro.
@@ -288,21 +360,38 @@ void main() {
       await d.tapKey('export-pdf');
       await d.waitUntil(() => sharer.shared.length == 2, 'PDF shared', timeout: const Duration(seconds: 30));
       final csvFile = sharer.shared[0], pdfFile = sharer.shared[1];
-      log.check('export file names', ['home_inventory_2026-11-11.csv', 'home_inventory_2026-11-11.pdf'],
-          [csvFile.uri.pathSegments.last, pdfFile.uri.pathSegments.last]);
+      log.check(
+        'export file names',
+        ['home_inventory_2026-11-11.csv', 'home_inventory_2026-11-11.pdf'],
+        [csvFile.uri.pathSegments.last, pdfFile.uri.pathSegments.last],
+      );
 
       final csv = await csvFile.readAsString();
       final lines = csv.replaceFirst('﻿', '').split('\r\n');
       log.check('CSV item rows', 29, lines.skip(1).takeWhile((l) => l.isNotEmpty).length);
       log.check('CSV total line', 'Total,29 items,,,,,,,10648.00', lines.firstWhere((l) => l.startsWith('Total')));
-      log.check('CSV dishwasher row', 'Kitchen,Dishwasher,,,,2023-01-31,849.00,,849.00,2024-02-29,expired,0,0,',
-          lines.firstWhere((l) => l.contains('Dishwasher')));
-      log.check('CSV TV row uses current value', true,
-          lines.firstWhere((l) => l.contains('Samsung TV')).contains(',1299.99,900.00,900.00,2026-11-20,ends in 9 days,1,0,'));
-      log.check('CSV MacBook counts photos and receipt', true,
-          lines.firstWhere((l) => l.contains('MacBook')).endsWith(',2026-12-01,ends in 20 days,2,1,'));
-      log.check('CSV note guarded against formulas', true,
-          lines.firstWhere((l) => l.contains('Road bike')).endsWith(',"\'=HYPERLINK(""http://x""), carbon frame"'));
+      log.check(
+        'CSV dishwasher row',
+        'Kitchen,Dishwasher,,,,2023-01-31,849.00,,849.00,2024-02-29,expired,0,0,',
+        lines.firstWhere((l) => l.contains('Dishwasher')),
+      );
+      log.check(
+        'CSV TV row uses current value',
+        true,
+        lines
+            .firstWhere((l) => l.contains('Samsung TV'))
+            .contains(',1299.99,900.00,900.00,2026-11-20,ends in 9 days,1,0,'),
+      );
+      log.check(
+        'CSV MacBook counts photos and receipt',
+        true,
+        lines.firstWhere((l) => l.contains('MacBook')).endsWith(',2026-12-01,ends in 20 days,2,1,'),
+      );
+      log.check(
+        'CSV note guarded against formulas',
+        true,
+        lines.firstWhere((l) => l.contains('Road bike')).endsWith(',"\'=HYPERLINK(""http://x""), carbon frame"'),
+      );
       log.check('CSV has no Item 05', false, csv.contains('Item 05'));
 
       final pdf = await pdfFile.readAsBytes();
@@ -311,6 +400,37 @@ void main() {
       log.keep(pdfFile, 'inventory.pdf');
       log.inputs['photo_picks'] = photos.picks;
       log.inputs['clock'] = clock().toIso8601String();
+
+      // Dark theme, then close and reopen: theme, items and Pro stay.
+      await d.tapKey('tab-rooms');
+      await d.tapKey('open-settings');
+      await d.tapKey('settings-theme');
+      await d.pick('Dark');
+      log.check(
+        'Settings switches the app to dark',
+        Brightness.dark,
+        Theme.of(tester.element(find.byKey(const Key('settings-theme')))).brightness,
+      );
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+      await shots.take('4_dark_rooms');
+      await d.tapKey('tab-warranties');
+      await shots.take('5_dark_warranties');
+      await tester.pumpWidget(const SizedBox.shrink());
+      await tester.pumpAndSettle();
+      await tester.pumpWidget(app());
+      await d.waitFor(find.byKey(const Key('total-value')));
+      log.check(
+        'reopened: still dark',
+        Brightness.dark,
+        Theme.of(tester.element(find.byKey(const Key('total-value')))).brightness,
+      );
+      log.check('reopened: total kept', r'$10,648.00', await d.textOf('total-value'));
+      log.check('reopened: no onboarding again', false, d.exists('onboarding'));
+      await d.tapKey('export-menu');
+      await d.tapKey('export-csv');
+      await d.waitUntil(() => sharer.shared.length == 3, 'CSV shared after reopen');
+      log.check('reopened: Pro kept, export needs no paywall', false, d.exists('paywall'));
     } catch (e, st) {
       log.check('no exception', 'none', '$e\n$st');
     } finally {
@@ -318,6 +438,7 @@ void main() {
       await tester.pumpAndSettle();
       await db.close().timeout(const Duration(seconds: 10), onTimeout: () {});
       log.write();
+      semantics.dispose();
     }
     expect(log.failures, isEmpty, reason: 'see $artifactRoot/result.json');
   }, timeout: const Timeout(Duration(minutes: 8)));

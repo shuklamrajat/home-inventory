@@ -1,4 +1,4 @@
-# Home Inventory (working name)
+# Housetally
 
 Home inventory and warranty tracker: rooms, items with photos and receipts, warranty end dates, 25 free items, insurance claim PDF with pictures and CSV.
 
@@ -14,7 +14,7 @@ no server. The free version covers the core; Pro is sold through the stores
 | packages/app_core | Shared core: settings, onboarding, paywall and entitlements, ratings prompt, CSV/PDF export, theme |
 | packages/e2e_driver | Helpers for the end-to-end test and store screenshots |
 | store/ | Store listing, data safety answers, privacy policy, screenshots, icon, feature graphic |
-| tool/ | Store screenshot and art scripts |
+| tool/ | Store screenshots, art and listing checks |
 
 `packages/` is a copy of the core shared with the other apps of the
 portfolio. A fix there should be copied to the other app repos too.
@@ -32,7 +32,7 @@ flutter run                                     # on a phone or emulator
 ## Tests
 
 End-to-end is the main test: it drives the real app on a real database through
-a realistic scenario (30 items with photos, $10,648.00 total, 59 checks) and writes checkable artifacts.
+a realistic scenario (30 items with photos, $10,648.00 total, 67 checks) and writes checkable artifacts.
 
 ```
 apps/home_inventory/tool/run_e2e.sh
@@ -50,8 +50,21 @@ Store screenshots: `tool/store_shots.sh` reruns the end-to-end test at
 1080x1920 and saves pictures to store/home_inventory/screenshots/. It fails if any
 check fails.
 
+## Look and feel
+
+The mascot and illustrations are drawn in code (`apps/home_inventory/lib/src/ui/scenes.dart`)
+and animated with the shared kit in `packages/app_core/lib/src/ui/` (scenes, charts
+that draw in, count-up numbers, confetti on purchase). Endless loops stop and intros
+jump to the end when the phone asks for reduced motion; the end-to-end test checks that.
+
+## Store art
+
+`tool/store_shots.sh` takes the phone screenshots from the end-to-end run,
+`tool/make_store_art.py` makes the icon, framed listing screenshots and feature
+graphic, and `tool/check_listings.py` checks Play's character limits. The
+listing text is in `store/home_inventory/listing.md`.
+
 ## Before the stores
 
-See store/README.md. In short: final name and bundle id (currently
-`com.placeholder.*`), signed builds (keep the upload key out of this repo),
+See store/README.md. In short: the app id is `com.shuklamrajat.housetally`; signed builds (keep the upload key out of this repo),
 RevenueCat in place of LocalEntitlementService, then Play internal testing.

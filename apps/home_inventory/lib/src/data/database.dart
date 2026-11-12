@@ -42,12 +42,12 @@ class InventoryDb extends _$InventoryDb {
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
-        onCreate: (m) async {
-          await m.createAll();
-          for (final r in const ['Living room', 'Kitchen', 'Bedroom', 'Office', 'Garage']) {
-            await into(rooms).insert(RoomsCompanion.insert(name: r));
-          }
-        },
-        beforeOpen: (details) async => customStatement('PRAGMA foreign_keys = ON'),
-      );
+    onCreate: (m) async {
+      await m.createAll();
+      for (final r in const ['Living room', 'Kitchen', 'Bedroom', 'Office', 'Garage']) {
+        await into(rooms).insert(RoomsCompanion.insert(name: r));
+      }
+    },
+    beforeOpen: (details) async => customStatement('PRAGMA foreign_keys = ON'),
+  );
 }

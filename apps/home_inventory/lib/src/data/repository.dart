@@ -20,10 +20,12 @@ final inventoryDbProvider = Provider<InventoryDb>((ref) {
 });
 
 /// Folder that holds photos and receipts.
-final attachmentsDirProvider = Provider<Future<Directory> Function()>((ref) => () async {
-      final base = await getApplicationSupportDirectory();
-      return Directory(p.join(base.path, 'attachments')).create(recursive: true);
-    });
+final attachmentsDirProvider = Provider<Future<Directory> Function()>(
+  (ref) => () async {
+    final base = await getApplicationSupportDirectory();
+    return Directory(p.join(base.path, 'attachments')).create(recursive: true);
+  },
+);
 
 class PickedImage {
   const PickedImage(this.bytes, this.extension);
@@ -55,7 +57,8 @@ class DevicePhotoSource implements PhotoSource {
 final photoSourceProvider = Provider<PhotoSource>((ref) => DevicePhotoSource());
 
 final repositoryProvider = Provider<InventoryRepository>(
-    (ref) => InventoryRepository(ref.watch(inventoryDbProvider), ref.watch(attachmentsDirProvider)));
+  (ref) => InventoryRepository(ref.watch(inventoryDbProvider), ref.watch(attachmentsDirProvider)),
+);
 
 const freeItemLimit = 25;
 
@@ -66,8 +69,7 @@ class InventoryRepository {
 
   Future<String> attachmentsPath() async => (await _dir()).path;
 
-  Stream<List<Room>> watchRooms() =>
-      (db.select(db.rooms)..orderBy([(r) => OrderingTerm(expression: r.id)])).watch();
+  Stream<List<Room>> watchRooms() => (db.select(db.rooms)..orderBy([(r) => OrderingTerm(expression: r.id)])).watch();
 
   Future<int> addRoom(String name) => db.into(db.rooms).insert(RoomsCompanion.insert(name: name.trim()));
 
@@ -117,9 +119,8 @@ class InventoryRepository {
     return name;
   }
 
-  Future<void> addAttachment(int itemId, String kind, String fileName) => db
-      .into(db.attachments)
-      .insert(AttachmentsCompanion.insert(itemId: itemId, kind: kind, fileName: fileName));
+  Future<void> addAttachment(int itemId, String kind, String fileName) =>
+      db.into(db.attachments).insert(AttachmentsCompanion.insert(itemId: itemId, kind: kind, fileName: fileName));
 
   Future<void> removeAttachment(Attachment a) async {
     await (db.delete(db.attachments)..where((x) => x.id.equals(a.id))).go();
@@ -133,7 +134,6 @@ class InventoryRepository {
 final attachmentsPathProvider = FutureProvider<String>((ref) => ref.watch(repositoryProvider).attachmentsPath());
 final roomsProvider = StreamProvider<List<Room>>((ref) => ref.watch(repositoryProvider).watchRooms());
 final itemsProvider = StreamProvider<List<Item>>((ref) => ref.watch(repositoryProvider).watchItems());
-final attachmentsProvider =
-    StreamProvider<List<Attachment>>((ref) => ref.watch(repositoryProvider).watchAttachments());
+final attachmentsProvider = StreamProvider<List<Attachment>>((ref) => ref.watch(repositoryProvider).watchAttachments());
 
 int valueOf(Item i) => itemValue(valueCents: i.valueCents, priceCents: i.priceCents);

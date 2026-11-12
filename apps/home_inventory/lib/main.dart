@@ -8,11 +8,10 @@ import 'src/app.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
-  runApp(ProviderScope(
-    overrides: [
-      sharedPrefsProvider.overrideWithValue(prefs),
-      appConfigProvider.overrideWithValue(inventoryConfig),
-    ],
-    child: const InventoryApp(),
-  ));
+  runApp(
+    ProviderScope(
+      overrides: [sharedPrefsProvider.overrideWithValue(prefs), appConfigProvider.overrideWithValue(inventoryConfig)],
+      child: const InventoryApp(),
+    ),
+  );
 }

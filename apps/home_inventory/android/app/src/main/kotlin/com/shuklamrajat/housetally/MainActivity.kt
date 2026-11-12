@@ -1,4 +1,4 @@
-package com.placeholder.home_inventory
+package com.shuklamrajat.housetally
 
 import io.flutter.embedding.android.FlutterActivity
 
