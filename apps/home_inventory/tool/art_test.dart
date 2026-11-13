@@ -6,6 +6,7 @@ import 'package:app_core/art.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:home_inventory/src/app.dart';
+import 'package:home_inventory/src/ui/logo.dart';
 import 'package:home_inventory/src/ui/scenes.dart';
 
 const out = String.fromEnvironment('ART_OUT', defaultValue: 'build/art');
@@ -13,15 +14,8 @@ const out = String.fromEnvironment('ART_OUT', defaultValue: 'build/art');
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   test('store art', () async {
-    await writeScenePng(
-      '$out/icon.png',
-      iconPaint((c, s, f) {
-        c.drawCircle(s.center(Offset(0, s.height * 0.04)), s.width * 0.36, Paint()..color = const Color(0x33FFF4E6));
-        housetally(c, Offset(s.width / 2, s.height * 0.86), s.width * 0.62, f);
-      }),
-      const Size(1024, 1024),
-      inventoryConfig,
-    );
+    // The in-app logo at rest, checked against brand/logo-1024.png.
+    await writeScenePng('$out/icon.png', housetallyLogo, const Size(1024, 1024), inventoryConfig, loop: 0);
     await writeScenePng(
       '$out/mascot.png',
       (c, s, f) => housetally(c, Offset(s.width / 2, s.height * 0.9), s.width * 0.62, f),

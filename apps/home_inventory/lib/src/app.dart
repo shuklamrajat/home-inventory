@@ -2,6 +2,7 @@ import 'package:app_core/app_core.dart';
 import 'package:flutter/material.dart';
 
 import 'ui/home_screen.dart';
+import 'ui/logo.dart';
 import 'ui/scenes.dart';
 
 const featureUnlimitedItems = 'unlimited_items';
@@ -15,6 +16,7 @@ const inventoryConfig = AppConfig(
   accentColor: Color(0xFFF2B33D),
   gradientEndColor: Color(0xFF5D2E46),
   paywallScene: stackProScene,
+  logo: housetallyLogo,
   onboarding: [
     OnboardingPage(
       icon: Icons.chair_outlined,

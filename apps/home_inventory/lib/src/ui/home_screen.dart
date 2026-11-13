@@ -65,7 +65,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(width: 30, height: 30, child: AnimatedScene(paint: _logo, aspectRatio: 1)),
+            const BrandLogo(size: 30),
             const SizedBox(width: 8),
             Text(ref.watch(appConfigProvider).appName),
           ],
@@ -139,10 +139,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 }
 
-void _logo(Canvas c, Size s, SceneFrame f) =>
-    housetally(c, Offset(s.width / 2, s.height * 0.98), s.width * 0.95, f, blink: _logoBlink(f.loop));
+// The Housetally mascot, peeking out of the value ring.
+void _mascot(Canvas c, Size s, SceneFrame f) =>
+    housetally(c, Offset(s.width / 2, s.height * 0.98), s.width * 0.95, f, blink: _blink(f.loop));
 
-double _logoBlink(double loop) {
+double _blink(double loop) {
   final t = (loop * 2) % 1;
   return t > 0.93 ? math.sin((t - 0.93) / 0.07 * math.pi) : 0;
 }
@@ -251,7 +252,7 @@ class _ValueHero extends ConsumerWidget {
                       ChartPart(values[i].$2.toDouble(), palette[i % palette.length]),
                   ],
             semanticsLabel: label,
-            center: SizedBox(width: 54, height: 54, child: AnimatedScene(paint: _logo, aspectRatio: 1)),
+            center: SizedBox(width: 54, height: 54, child: AnimatedScene(paint: _mascot, aspectRatio: 1)),
           ),
         ],
       ),
