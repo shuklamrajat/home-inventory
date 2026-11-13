@@ -1,6 +1,6 @@
 {
   "package": "com.shuklamrajat.housetally",
-  "device": "pixel_6 API 35",
+  "device": "pixel_6 API 34",
   "apk": "universal.apk",
   "passed": false,
   "emulator_stopped": true,
