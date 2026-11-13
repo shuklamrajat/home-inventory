@@ -178,7 +178,7 @@ jobs:
     # own tests. A job fails on any app crash, freeze or failed check. If the
     # emulator itself stops answering (a test machine problem), it gets one
     # fresh emulator and one more try; an app crash is never retried.
-    name: ${{ matrix.part == 'release' && 'Release APK' || 'App tests' }} on ${{ matrix.device }} audio ${{ matrix.audio }}
+    name: ${{ matrix.part == 'release' && 'Release APK' || 'App tests' }} on ${{ matrix.device }} API ${{ matrix.api }}
     needs: android
     if: needs.android.outputs.signed == 'true'
     runs-on: ubuntu-latest
@@ -190,9 +190,9 @@ jobs:
       matrix:
         device: [pixel_6]
         part: [release]
-        api: [35]
+        api: [34, 36]
         gpu: [swiftshader_indirect]
-        audio: ['-noaudio', 'audio-on', 'sound-effects-off']
+        audio: ['-noaudio']
     env:
       APP_DIR: apps/home_inventory
       PLAY_PACKAGE: com.shuklamrajat.housetally
