@@ -553,7 +553,8 @@ class _StepBadgeState extends State<_StepBadge> with TickerProviderStateMixin {
     if (v == 63) {
       _orbit.stop();
     }
-    if (v == 64 || v == 65) return _SafeBadge(icon: widget.icon, colors: widget.colors, onBrand: widget.onBrand, sparks: v == 65);
+    if (v == 67) return _SafeBadge(icon: widget.icon, colors: widget.colors, onBrand: widget.onBrand, sparks: false);
+    if (v == 99) return _SafeBadge(icon: widget.icon, colors: widget.colors, onBrand: widget.onBrand, sparks: true);
     return _oldBuild();
   }
 
@@ -632,12 +633,24 @@ class _SafeBadgeState extends State<_SafeBadge> with SingleTickerProviderStateMi
           builder: (_, s, child) => Transform.scale(scale: s, child: child),
           child: Container(
             width: 42, height: 42,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(colors: widget.colors, begin: Alignment.topLeft, end: Alignment.bottomRight),
-            ),
+            decoration: BoxDecoration(shape: BoxShape.circle, color: widget.colors.first),
             alignment: Alignment.center,
-            child: Icon(widget.icon, color: widget.onBrand, size: 24),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // A lighter crescent in solid colour gives the disc depth. No
+                // gradient: a gradient disc in the tour card stopped the
+                // Android emulator's GPU dead, even painted once.
+                Positioned(
+                  left: 5, top: 4,
+                  child: Container(
+                    width: 24, height: 24,
+                    decoration: BoxDecoration(shape: BoxShape.circle, color: Color.lerp(widget.colors.first, Colors.white, 0.22)),
+                  ),
+                ),
+                Icon(widget.icon, color: widget.onBrand, size: 24),
+              ],
+            ),
           ),
         ),
         if (widget.sparks)

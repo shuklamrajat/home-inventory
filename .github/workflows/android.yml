@@ -189,14 +189,17 @@ jobs:
       fail-fast: false
       matrix:
         device: [pixel_6]
-        part: [tests]
+        part: [tests, release]
         api: [35]
         gpu: [swiftshader_indirect]
         audio: ['-noaudio']
-        variant: [61, 62, 63, 64, 65]
+        variant: [99, 67]
+        exclude:
+          - part: release
+            variant: 67
     env:
       TOUR_VARIANT: ${{ matrix.variant }}
-      ONLY_TEST: a_diag_e2e_test
+      ONLY_TEST: ${{ matrix.variant == 67 && 'a_diag_e2e_test' || '' }}
       APP_DIR: apps/home_inventory
       PLAY_PACKAGE: com.shuklamrajat.housetally
       OUT: device-e2e/${{ matrix.device }}-${{ strategy.job-index }}/${{ matrix.part }}
