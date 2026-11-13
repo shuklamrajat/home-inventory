@@ -1,0 +1,46 @@
+{
+  "package": "com.shuklamrajat.housetally",
+  "device": "pixel_6 API 35",
+  "apk": "universal.apk",
+  "passed": false,
+  "emulator_stopped": false,
+  "android_stalls_not_the_app": [],
+  "checks": [
+    {
+      "check": "still running 8 s after launch",
+      "want": true,
+      "got": true,
+      "ok": true
+    },
+    {
+      "check": "first screen: onboarding shows",
+      "want": true,
+      "got": true,
+      "ok": true
+    },
+    {
+      "check": "set up: the home screen shows",
+      "want": true,
+      "got": true,
+      "ok": true
+    },
+    {
+      "check": "add: the lawn mower ($300.00) counts toward the home value",
+      "want": true,
+      "got": true,
+      "ok": true
+    },
+    {
+      "check": "the session finished without an error",
+      "want": null,
+      "got": "the row for \"Edit item\" never appeared, even after scrolling. On screen: ['$0.00', '$300.00', '0 items', '1', '1 item', '5', 'Add item', 'Bedroom', 'Garage', 'HOME VALUE', 'Housetally', 'Housetally logo', 'Items', 'Kitchen', 'Living room', 'Office', 'Rooms', 'Settings', 'Show menu', 'Tab 1 of 3', 'Tab 2 of 3', 'Tab 3 of 3', 'Value by room. Garage $300.00, 100%.', 'Warranties']",
+      "ok": false
+    },
+    {
+      "check": "logcat has no crash for this app",
+      "want": [],
+      "got": [],
+      "ok": true
+    }
+  ]
+}
