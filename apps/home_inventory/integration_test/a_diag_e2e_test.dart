@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, curly_braces_in_flow_control_structures
 // DIAG ONLY: builds the home screen up piece by piece, with semantics on,
 // printing each step, to find which piece stops the emulator.
 import 'dart:io';
@@ -50,17 +50,23 @@ void main() {
     await hold(6);
     print('HTDIAG onboarding shown');
     await tester.tap(find.byKey(const Key('onboarding-skip')));
-    for (final lv in const [0, 1, 2, 3, 4, 5, 6, 7, 8, 99]) {
+    for (final lv in const [99]) {
       homeDiagLevel.value = lv;
       print('HTDIAG level $lv start');
       await hold(12);
       print('HTDIAG level $lv survived');
     }
     final container = ProviderScope.containerOf(tester.element(find.byType(HomeScreen)));
-    print('HTDIAG tour start');
-    container.read(tourControllerProvider.notifier).start();
-    await hold(20);
-    print('HTDIAG tour survived');
+    final tour = container.read(tourControllerProvider.notifier);
+    for (final lv in const [0, 1, 2, 3, 4, 5, 6, 7, 99]) {
+      tourDiagLevel.value = lv;
+      tour.start();
+      print('HTDIAG tour level $lv start');
+      await hold(15);
+      print('HTDIAG tour level $lv survived');
+      await tour.finish();
+      await hold(2);
+    }
     semantics.dispose();
     await tester.pumpWidget(const SizedBox.shrink());
     await db.close();

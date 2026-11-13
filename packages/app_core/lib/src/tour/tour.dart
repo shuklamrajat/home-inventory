@@ -1,3 +1,4 @@
+// ignore_for_file: curly_braces_in_flow_control_structures
 import 'dart:math' as math;
 import 'dart:ui' show PathMetric;
 
@@ -36,6 +37,9 @@ class TourState {
 /// Runs the tour. It starts by itself once per install, after onboarding,
 /// once Google's consent step is out of the way and the home screen shows its
 /// first step's control; Settings can replay it any time.
+/// DIAG ONLY: how much of the tour overlay to draw (99 = all of it).
+final tourDiagLevel = ValueNotifier<int>(99);
+
 class TourController extends Notifier<TourState> {
   static const doneKey = 'core.tourDone';
 
@@ -292,6 +296,8 @@ class _TourOverlayState extends State<_TourOverlay> with TickerProviderStateMixi
             final centred = widget.target == null;
             final cardTop = centred ? 0.0 : (below ? hole.bottom + 44 : null);
             final cardBottom = centred ? 0.0 : (below ? null : size.height - hole.top + 44);
+            final lv = tourDiagLevel.value;
+            if (lv == 0) return const SizedBox.expand();
             return Stack(
               children: [
                 // The scrim takes every tap outside the card, so nothing
@@ -318,7 +324,7 @@ class _TourOverlayState extends State<_TourOverlay> with TickerProviderStateMixi
                     rect: spot,
                     child: const IgnorePointer(child: SizedBox.expand(key: Key('tour-spotlight'))),
                   ),
-                if (widget.target != null)
+                if (widget.target != null && lv >= 4)
                   Positioned.fill(
                     child: IgnorePointer(
                       child: TweenAnimationBuilder<double>(
@@ -337,7 +343,7 @@ class _TourOverlayState extends State<_TourOverlay> with TickerProviderStateMixi
                       ),
                     ),
                   ),
-                Positioned(
+                if (lv >= 5) Positioned(
                   left: 16,
                   right: 16,
                   top: cardTop,
@@ -419,7 +425,7 @@ class _TourCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                _StepBadge(icon: step.icon, colors: [...brand.gradient, brand.accent], onBrand: brand.onBrand),
+                if (tourDiagLevel.value >= 6) _StepBadge(icon: step.icon, colors: [...brand.gradient, brand.accent], onBrand: brand.onBrand) else const SizedBox.square(dimension: 52),
                 const SizedBox(width: 14),
                 Expanded(
                   child: Column(
@@ -573,7 +579,9 @@ class _BadgePainter extends CustomPainter {
           end: Alignment.bottomRight,
         ).createShader(disc),
     );
-    canvas.drawArc(
+    if (tourDiagLevel.value == 6 && ring >= 1) {
+      canvas.drawCircle(c, r + 3, Paint()..style = PaintingStyle.stroke..strokeWidth = 1.6..color = colors.last.withValues(alpha: 0.8));
+    } else canvas.drawArc(
       Rect.fromCircle(center: c, radius: r + 3),
       -math.pi / 2,
       2 * math.pi * ring,
@@ -615,7 +623,7 @@ class _ScrimPainter extends CustomPainter {
       ..addRect(Offset.zero & size)
       ..addRRect(window);
     canvas.drawPath(scrim, Paint()..color = const Color(0xB3000000));
-    if (!hasTarget || hole.isEmpty) return;
+    if (!hasTarget || hole.isEmpty || tourDiagLevel.value < 2) return;
     canvas.drawRRect(
       window,
       Paint()
@@ -623,7 +631,7 @@ class _ScrimPainter extends CustomPainter {
         ..strokeWidth = 2.5
         ..shader = SweepGradient(colors: [...colors, colors.first]).createShader(hole),
     );
-    if (pulse > 0) {
+    if (pulse > 0 && tourDiagLevel.value >= 3) {
       canvas.drawRRect(
         window.inflate(14 * pulse),
         Paint()
