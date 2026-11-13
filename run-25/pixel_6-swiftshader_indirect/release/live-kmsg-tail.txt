@@ -1,0 +1,8 @@
+<14>[  272.899891] logd: ReadPackageList, total packages: 217
+<14>[  272.913963] servicemanager: Caller(pid=553,uid=1000,sid=u:r:system_server:s0) Since 'artd' could not be found trying to start it as a lazy AIDL service. (if it's not configured to be a lazy service, it may be stuck starting or still starting).
+<14>[  272.918012] init: starting service 'artd'...
+<14>[  272.935025] init: ... started service 'artd' has pid 4509
+<14>[  272.936079] init: Control message: Processed ctl.interface_start for 'aidl/artd' from pid: 145 (/system/bin/servicemanager)
+<14>[  276.413080] servicemanager: Caller(pid=4575,uid=10209,sid=u:r:untrusted_app:s0:c209,c256,c512,c768) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<12>[  277.247198] servicemanager: Isolated app with UID 99001 requested 'content_capture', but the service is not allowed for isolated apps.
+<12>[  277.697771] servicemanager: Isolated app with UID 99001 requested 'uimode', but the service is not allowed for isolated apps.
