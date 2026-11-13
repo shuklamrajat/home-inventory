@@ -19,10 +19,10 @@ If no such version exists, report the issue to the plugin. If necessary, here is
 an issue against a plugin: https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers#report-incompatible-kotlin-gradle-plugin-usage-to-plugin-authors
 
 If you are a plugin author, please migrate your plugin to Built-in Kotlin using this guide: https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors
-Running Gradle task 'assembleDebug'...                             59.3s
+Running Gradle task 'assembleDebug'...                             61.0s
 ✓ Built build/app/outputs/flutter-apk/app-debug.apk
-Installing build/app/outputs/flutter-apk/app-debug.apk...        1,591ms
+Installing build/app/outputs/flutter-apk/app-debug.apk...        1,352ms
 00:00 +0: A: EEA/UK person, consent, banner placement, privacy choices, paid Pro
-00:27 +1: B: outside the EEA/UK, no form, a failed ad leaves no gap
-00:37 +2: (tearDownAll)
-00:38 +2: All tests passed!
+00:24 +1: B: outside the EEA/UK, no form, a failed ad leaves no gap
+00:32 +2: (tearDownAll)
+00:33 +2: All tests passed!
