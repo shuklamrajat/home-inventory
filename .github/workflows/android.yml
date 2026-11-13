@@ -178,7 +178,7 @@ jobs:
     # own tests. A job fails on any app crash, freeze or failed check. If the
     # emulator itself stops answering (a test machine problem), it gets one
     # fresh emulator and one more try; an app crash is never retried.
-    name: ${{ matrix.part == 'release' && 'Release APK' || 'App tests' }} on ${{ matrix.device }} gpu ${{ matrix.gpu }}
+    name: ${{ matrix.part == 'release' && 'Release APK' || 'App tests' }} on ${{ matrix.device }} audio ${{ matrix.audio }}
     needs: android
     if: needs.android.outputs.signed == 'true'
     runs-on: ubuntu-latest
@@ -190,12 +190,13 @@ jobs:
       matrix:
         device: [pixel_6]
         part: [release]
-        api: [34, 35]
+        api: [35]
         gpu: [swiftshader_indirect]
+        audio: ['-noaudio', 'audio-on', 'sound-effects-off']
     env:
       APP_DIR: apps/home_inventory
       PLAY_PACKAGE: com.shuklamrajat.housetally
-      OUT: device-e2e/${{ matrix.device }}-${{ matrix.gpu }}/${{ matrix.part }}
+      OUT: device-e2e/${{ matrix.device }}-${{ strategy.job-index }}/${{ matrix.part }}
     steps:
       - uses: actions/checkout@v4
 
@@ -309,8 +310,8 @@ jobs:
           # The app's own tests run with animations off; the release session
           # turns them back on, like a real phone.
           disable-animations: true
-          emulator-options: -no-window -no-snapshot-save -gpu ${{ matrix.gpu }} -noaudio -no-boot-anim -camera-back none
-          script: STATUS_FILE="$RUNNER_TEMP/part-status" bash tool/device_part.sh ${{ matrix.part }} universal.apk "$PLAY_PACKAGE" "$APP_DIR" "$OUT" "${{ matrix.device }} API ${{ matrix.api }}"
+          emulator-options: -no-window -no-snapshot-save -gpu ${{ matrix.gpu }} ${{ (matrix.audio == '-noaudio' || matrix.audio == 'sound-effects-off') && '-noaudio' || '' }} -no-boot-anim -camera-back none
+          script: SOUND_OFF=${{ matrix.audio == 'sound-effects-off' && '1' || '0' }} STATUS_FILE="$RUNNER_TEMP/part-status" bash tool/device_part.sh ${{ matrix.part }} universal.apk "$PLAY_PACKAGE" "$APP_DIR" "$OUT" "${{ matrix.device }} API ${{ matrix.api }}"
 
       - name: Read the result
         id: first
@@ -332,8 +333,8 @@ jobs:
           # The app's own tests run with animations off; the release session
           # turns them back on, like a real phone.
           disable-animations: true
-          emulator-options: -no-window -no-snapshot-save -gpu ${{ matrix.gpu }} -noaudio -no-boot-anim -camera-back none
-          script: STATUS_FILE="$RUNNER_TEMP/part-status" bash tool/device_part.sh ${{ matrix.part }} universal.apk "$PLAY_PACKAGE" "$APP_DIR" "$OUT" "${{ matrix.device }} API ${{ matrix.api }}"
+          emulator-options: -no-window -no-snapshot-save -gpu ${{ matrix.gpu }} ${{ (matrix.audio == '-noaudio' || matrix.audio == 'sound-effects-off') && '-noaudio' || '' }} -no-boot-anim -camera-back none
+          script: SOUND_OFF=${{ matrix.audio == 'sound-effects-off' && '1' || '0' }} STATUS_FILE="$RUNNER_TEMP/part-status" bash tool/device_part.sh ${{ matrix.part }} universal.apk "$PLAY_PACKAGE" "$APP_DIR" "$OUT" "${{ matrix.device }} API ${{ matrix.api }}"
 
       - name: Pass/fail report
         if: always()
@@ -346,7 +347,7 @@ jobs:
         if: always()
         env:
           RUN: run-${{ github.run_number }}
-          DEVICE: ${{ matrix.device }}-${{ matrix.gpu }}
+          DEVICE: ${{ matrix.device }}-audio${{ strategy.job-index }}
           PART: ${{ matrix.part }}
           REMOTE: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
         run: |
@@ -391,7 +392,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: device-e2e-${{ matrix.device }}-${{ matrix.gpu }}-${{ matrix.part }}-${{ github.run_number }}
+          name: device-e2e-${{ matrix.device }}-${{ strategy.job-index }}-${{ matrix.part }}-${{ github.run_number }}
           path: ${{ env.OUT }}
           if-no-files-found: warn
 

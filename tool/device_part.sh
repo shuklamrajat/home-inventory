@@ -50,6 +50,7 @@ done
 # switch off the setup app. A freeze of the app itself is still caught: it is
 # logged as "ANR in <app>", which fails the run.
 timeout 10 adb shell settings put global hide_error_dialogs 1 || true
+[ "${SOUND_OFF:-0}" = 1 ] && { timeout 10 adb shell settings put system sound_effects_enabled 0; echo "touch sounds off"; } || true
 timeout 20 adb shell pm disable-user --user 0 com.google.android.googlesdksetup >/dev/null 2>&1 || true
 timeout 10 adb shell input keyevent KEYCODE_HOME || true
 
