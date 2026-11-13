@@ -1,0 +1,20 @@
+<14>[  315.106162] logd: logdr: UID=0 GID=0 PID=4487 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+<14>[  315.827285] logd: start watching /data/system/packages.list ...
+<14>[  315.831739] logd: ReadPackageList, total packages: 217
+<14>[  315.847238] init: starting service 'artd'...
+<12>[  320.107292] servicemanager: Isolated app with UID 99001 requested 'content_capture', but the service is not allowed for isolated apps.
+<14>[  326.022874] init: starting service 'exec 25 (/system/bin/lmkd --reinit)'...
+<14>[  326.089830] init: ... started service 'exec 25 (/system/bin/lmkd --reinit)' has pid 4730
+<14>[  326.102042] init: Command 'exec_background /system/bin/lmkd --reinit' action=lmkd.reinit=1 (/system/etc/init/lmkd.rc:11) took 79ms and succeeded
+<14>[  326.233341] init: Service 'exec 25 (/system/bin/lmkd --reinit)' (pid 4730) exited with status 0 oneshot service took 0.175000 seconds in background
+<14>[  326.239811] init: Sending signal 9 to service 'exec 25 (/system/bin/lmkd --reinit)' (pid 4730) process group...
+<14>[  335.928255] servicemanager: Caller(pid=4780,uid=0,sid=u:r:su:s0) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<36>[  344.871153] type=1400 audit(1794594606.228:52): avc:  granted  { execute } for  comm="pool-12-thread-" path="/data/data/com.shuklamrajat.housetally/app_pccache/6/1FECF17D179A896CE8C02AACE0C580FE8C2F25DD/pcam.jar" dev="dm-46" ino=368849 scontext=u:r:untrusted_app:s0:c209,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c209,c256,c512,c768 tclass=file app=com.shuklamrajat.housetally
+<14>[  348.986329] servicemanager: Caller(pid=4934,uid=0,sid=u:r:su:s0) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<14>[  369.729609] servicemanager: Caller(pid=1370,uid=10150,sid=u:r:untrusted_app:s0:c150,c256,c512,c768) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<12>[  370.561915] healthd: battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+<36>[  401.515166] type=1400 audit(1794594662.872:53): avc:  denied  { read } for  comm="binder:2381_B" name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=318 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+<36>[  401.522944] type=1400 audit(1794594662.872:54): avc:  denied  { read } for  comm="binder:2381_B" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=63 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+<12>[  430.562391] healthd: battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+<14>[  440.291042] servicemanager: Caller(pid=5585,uid=0,sid=u:r:su:s0) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<14>[  443.047888] logd: logdr: UID=0 GID=0 PID=5592 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns

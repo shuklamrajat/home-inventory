@@ -1,0 +1,120 @@
+Swap:          10239           0       10239
+18:31:01
+    PID   RSS %CPU CMD
+   3251 3937380 166 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4849        2466          52        9063       11133
+Swap:          10239           0       10239
+18:31:03
+    PID   RSS %CPU CMD
+   3251 3937380 166 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4853        2463          52        9063       11129
+Swap:          10239           0       10239
+18:31:05
+    PID   RSS %CPU CMD
+   3251 4038604 167 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2367          52        9065       11035
+Swap:          10239           0       10239
+18:31:07
+    PID   RSS %CPU CMD
+   3251 4038608 170 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2367          52        9065       11035
+Swap:          10239           0       10239
+18:31:09
+    PID   RSS %CPU CMD
+   3251 4038608 173 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2366          52        9065       11035
+Swap:          10239           0       10239
+18:31:11
+    PID   RSS %CPU CMD
+   3251 4038608 176 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2359          52        9072       11035
+Swap:          10239           0       10239
+18:31:13
+    PID   RSS %CPU CMD
+   3251 4038600 179 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2358          52        9073       11035
+Swap:          10239           0       10239
+18:31:15
+    PID   RSS %CPU CMD
+   3251 4038600 182 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4949        2357          52        9073       11034
+Swap:          10239           0       10239
+18:31:17
+    PID   RSS %CPU CMD
+   3251 4038624 185 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4948        2357          52        9073       11034
+Swap:          10239           0       10239
+18:31:19
+    PID   RSS %CPU CMD
+   3251 4038628 187 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4948        2357          52        9074       11034
+Swap:          10239           0       10239
+18:31:21
+    PID   RSS %CPU CMD
+   3251 4038628 190 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2357          52        9074       11035
+Swap:          10239           0       10239
+18:31:23
+    PID   RSS %CPU CMD
+   3251 4038628 192 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2357          52        9074       11035
+Swap:          10239           0       10239
+18:31:26
+    PID   RSS %CPU CMD
+   3251 4038628 195 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2357          52        9075       11035
+Swap:          10239           0       10239
+18:31:28
+    PID   RSS %CPU CMD
+   3251 4038632 197 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2357          52        9075       11035
+Swap:          10239           0       10239
+18:31:30
+    PID   RSS %CPU CMD
+   3251 4038632 199 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2356          52        9075       11035
+Swap:          10239           0       10239
+18:31:32
+    PID   RSS %CPU CMD
+   3251 4038632 202 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4948        2356          52        9075       11035
+Swap:          10239           0       10239
+18:31:34
+    PID   RSS %CPU CMD
+   3251 4038636 204 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4948        2356          52        9075       11035
+Swap:          10239           0       10239
+18:31:36
+    PID   RSS %CPU CMD
+   3251 4038636 206 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4948        2355          52        9075       11034
+Swap:          10239           0       10239
+18:31:38
+    PID   RSS %CPU CMD
+   3251 4038636 208 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2356          52        9075       11035
+Swap:          10239           0       10239
+18:31:40
+    PID   RSS %CPU CMD
+   3251 4038640 210 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4946        2357          52        9075       11036
+Swap:          10239           0       10239
+18:31:42
+    PID   RSS %CPU CMD
+   3251 4038640 212 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2356          52        9076       11035
+Swap:          10239           0       10239
+18:31:44
+    PID   RSS %CPU CMD
+   3251 4038660 214 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4947        2356          52        9076       11035
+Swap:          10239           0       10239
+18:31:46
+    PID   RSS %CPU CMD
+   3251 4038664 216 /usr/local/lib/android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -port 5554 -avd te
+Mem:           15983        4949        2352          52        9077       11033
+Swap:          10239           0       10239
+18:31:48
+    PID   RSS %CPU CMD
+Mem:           15983        1068        6233          52        9078       14914
+Swap:          10239           0       10239
