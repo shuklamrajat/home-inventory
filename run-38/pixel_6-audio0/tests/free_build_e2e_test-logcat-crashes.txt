@@ -1,0 +1,1 @@
+11-13 13:25:57.095   553   593 W ActivityManager: Slow operation: 57ms so far, now at startProcess: returned from zygote!
