@@ -1,0 +1,11 @@
+<14>[  272.972852] logd: logdr: UID=0 GID=0 PID=4470 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+<14>[  273.721478] logd: start watching /data/system/packages.list ...
+<14>[  273.727646] logd: ReadPackageList, total packages: 217
+<14>[  273.827839] BpBinder: onLastStrongRef automatically unlinking death recipients: 
+<14>[  273.829324] servicemanager: Notifying artd they do (previously: don't) have clients when service is guaranteed to be in use
+<12>[  274.404218] logd: Skipping entries from slow reader, pid 4470, fd 16, from LogBuffer::Prune()
+<12>[  274.405654] logd: Skipping entries from slow reader, pid 464, fd 14, from LogBuffer::Prune()
+<36>[  276.158686] type=1400 audit(1794581254.523:51): avc:  denied  { read } for  comm="ajat.housetally" name="max_map_count" dev="proc" ino=36110 scontext=u:r:untrusted_app:s0:c209,c256,c512,c768 tcontext=u:object_r:proc_max_map_count:s0 tclass=file permissive=0 app=com.shuklamrajat.housetally
+<14>[  277.341266] servicemanager: Caller(pid=4575,uid=10209,sid=u:r:untrusted_app:s0:c209,c256,c512,c768) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<12>[  278.674957] servicemanager: Isolated app with UID 99001 requested 'uimode', but the service is not allowed for isolated apps.
+<14>[  294.408255] servicemanager: Caller(pid=4752,uid=0,sid=u:r:su:s0) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
