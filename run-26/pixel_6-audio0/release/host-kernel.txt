@@ -1,0 +1,1 @@
+[  509.291945] RenderThread[4318]: segfault at 612ea5d28840 ip 0000612e8406008a sp 00007d8cd8bf4810 error 4 likely on CPU 2 (core 1, socket 0)

@@ -1,0 +1,5 @@
+<14>[  271.496288] logd: logdr: UID=0 GID=0 PID=4464 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+<14>[  273.555395] servicemanager: Notifying artd they do (previously: don't) have clients when service is guaranteed to be in use
+<14>[  273.557249] BpBinder: onLastStrongRef automatically unlinking death recipients: 
+<14>[  276.582207] servicemanager: Caller(pid=4565,uid=10209,sid=u:r:untrusted_app:s0:c209,c256,c512,c768) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<12>[  277.242067] servicemanager: Isolated app with UID 99001 requested 'connectivity', but the service is not allowed for isolated apps.
