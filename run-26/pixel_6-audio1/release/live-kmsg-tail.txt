@@ -1,0 +1,15 @@
+<14>[  273.111301] logd: logdr: UID=0 GID=0 PID=4466 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+<14>[  273.686183] logd: start watching /data/system/packages.list ...
+<14>[  273.690986] logd: ReadPackageList, total packages: 217
+<14>[  273.704331] servicemanager: Caller(pid=553,uid=1000,sid=u:r:system_server:s0) Since 'artd' could not be found trying to start it as a lazy AIDL service. (if it's not configured to be a lazy service, it may be stuck starting or still starting).
+<14>[  273.708535] init: starting service 'artd'...
+<14>[  273.727038] init: ... started service 'artd' has pid 4508
+<14>[  273.727973] init: Control message: Processed ctl.interface_start for 'aidl/artd' from pid: 145 (/system/bin/servicemanager)
+<14>[  273.766490] servicemanager: Notifying artd they do (previously: don't) have clients when service is guaranteed to be in use
+<14>[  273.768134] BpBinder: onLastStrongRef automatically unlinking death recipients: 
+<12>[  274.200434] logd: Skipping entries from slow reader, pid 464, fd 14, from LogBuffer::Prune()
+<12>[  277.012875] servicemanager: Isolated app with UID 99001 requested 'network_management', but the service is not allowed for isolated apps.
+<12>[  277.043756] servicemanager: Isolated app with UID 99001 requested 'connectivity', but the service is not allowed for isolated apps.
+<12>[  277.072426] servicemanager: Isolated app with UID 99001 requested 'content_capture', but the service is not allowed for isolated apps.
+<14>[  283.563338] servicemanager: Caller(pid=4704,uid=0,sid=u:r:su:s0) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<6>[  294.959459] binder: undelivered transaction 376107, process died.
