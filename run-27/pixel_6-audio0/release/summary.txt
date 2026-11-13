@@ -1,0 +1,4 @@
+Device: pixel_6 API 34, part: release
+Release APK session: 3/4 checks passed
+  FAIL the session finished without an error: want None, got 'the emulator stopped answering'
+RESULT: release on pixel_6 API 34 stopped because the emulator stopped answering (test machine, not the app)

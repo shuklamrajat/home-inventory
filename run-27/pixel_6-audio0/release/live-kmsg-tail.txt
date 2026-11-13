@@ -1,0 +1,13 @@
+<14>[  255.572121] logd: logdr: UID=0 GID=0 PID=6257 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+<14>[  256.479210] logd: start watching /data/system/packages.list ...
+<14>[  256.480709] logd: ReadPackageList, total packages: 200
+<14>[  256.511659] servicemanager: Since 'artd' could not be found, trying to start it as a lazy AIDL service. (if it's not configured to be a lazy service, it may be stuck starting or still starting).
+<14>[  256.515793] init: starting service 'artd'...
+<14>[  256.589801] BpBinder: onLastStrongRef automatically unlinking death recipients: 
+<14>[  256.591559] servicemanager: Notifying artd they do (previously: don't) have clients when service is guaranteed to be in use
+<36>[  258.718974] type=1400 audit(1794578943.252:44): avc:  denied  { read } for  comm="ajat.housetally" name="max_map_count" dev="proc" ino=78856 scontext=u:r:untrusted_app:s0:c192,c256,c512,c768 tcontext=u:object_r:proc_max_map_count:s0 tclass=file permissive=0 app=com.shuklamrajat.housetally
+<14>[  260.614357] init: Service 'artd' (pid 6300) exited with status 0 oneshot service took 4.096000 seconds in background
+<14>[  260.616934] init: Sending signal 9 to service 'artd' (pid 6300) process group...
+<14>[  260.618679] libprocessgroup: Successfully killed process cgroup uid 1082 pid 6300 in 0ms
+<14>[  266.593554] servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+<14>[  276.604496] servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
