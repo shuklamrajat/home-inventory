@@ -139,15 +139,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 }
 
-// The Housetally mascot, peeking out of the value ring.
-void _mascot(Canvas c, Size s, SceneFrame f) =>
-    housetally(c, Offset(s.width / 2, s.height * 0.98), s.width * 0.95, f, blink: _blink(f.loop));
-
-double _blink(double loop) {
-  final t = (loop * 2) % 1;
-  return t > 0.93 ? math.sin((t - 0.93) / 0.07 * math.pi) : 0;
-}
-
 /// Colours for rooms in the chart and on the room cards, in value order.
 List<Color> roomPalette(BuildContext context) {
   final s = Theme.of(context).colorScheme;
@@ -237,24 +228,68 @@ class _ValueHero extends ConsumerWidget {
                     _HeroChip(icon: Icons.house_rounded, label: 'Rooms', value: '${rooms.length}'),
                   ],
                 ),
+                const SizedBox(height: 12),
+                _RoomShareBar(
+                  parts: [
+                    for (var i = 0; i < values.length; i++) (values[i].$2.toDouble(), palette[i % palette.length]),
+                  ],
+                ),
               ],
             ),
           ),
           const SizedBox(width: 8),
-          AnimatedDonut(
+          Semantics(
             key: const Key('room-chart'),
-            size: 104,
-            thickness: 14,
-            parts: values.isEmpty
-                ? [ChartPart(1, brand.onBrand.withValues(alpha: 0.2))]
-                : [
-                    for (var i = 0; i < values.length; i++)
-                      ChartPart(values[i].$2.toDouble(), palette[i % palette.length]),
-                  ],
-            semanticsLabel: label,
-            center: SizedBox(width: 54, height: 54, child: AnimatedScene(paint: _mascot, aspectRatio: 1)),
+            container: true,
+            image: true,
+            label: label,
+            child: ExcludeSemantics(
+              child: SizedBox(
+                width: 150,
+                height: 120,
+                child: AnimatedScene(
+                  paint: homeHeroScene([for (var i = 0; i < values.length; i++) palette[i % palette.length]]),
+                  aspectRatio: 150 / 120,
+                  intro: const Duration(milliseconds: 1800),
+                ),
+              ),
+            ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// Each room's share of the home's value, as one rounded bar that grows in.
+class _RoomShareBar extends StatelessWidget {
+  const _RoomShareBar({required this.parts});
+  final List<(double, Color)> parts;
+
+  @override
+  Widget build(BuildContext context) {
+    final brand = BrandColors.of(context);
+    final total = parts.fold(0.0, (a, p) => a + p.$1);
+    return TweenAnimationBuilder<double>(
+      tween: Tween(begin: 0, end: 1),
+      duration: Motion.of(context, 900),
+      curve: Curves.easeOutCubic,
+      builder: (_, t, _) => ClipRRect(
+        borderRadius: BorderRadius.circular(99),
+        child: SizedBox(
+          height: 8,
+          child: Row(
+            children: [
+              if (total == 0)
+                Expanded(child: ColoredBox(color: brand.onBrand.withValues(alpha: 0.2)))
+              else ...[
+                for (final (v, col) in parts)
+                  Expanded(flex: (v / total * 1000 * t).round().clamp(1, 1000), child: ColoredBox(color: col)),
+                if (t < 1) Expanded(flex: ((1 - t) * 1000).round().clamp(1, 1000), child: ColoredBox(color: brand.onBrand.withValues(alpha: 0.2))),
+              ],
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -490,3 +490,126 @@ void shieldScene(Canvas c, Size s, SceneFrame f) {
   );
   paintSparkField(c, s, f, _gold, count: 5, seed: 2);
 }
+
+/// The home screen's hero: the house with one window per room that lights up
+/// in turn (in that room's colour), smoke from the chimney, and things
+/// dropping into a moving box with a little squash as they land.
+/// [rooms] are the room colours, most valuable first; a window stays dark
+/// when there is no room for it yet.
+ScenePaint homeHeroScene(List<Color> rooms) => (Canvas c, Size s, SceneFrame f) {
+  final w = s.width, h = s.height;
+  final ground = h * 0.9;
+  // Soft sun behind the house, and a gentle hill.
+  Ink2.glow(c, Offset(w * 0.3, h * 0.36), w * 0.42, _gold.withValues(alpha: 0.28));
+  c.drawOval(
+    Rect.fromCenter(center: Offset(w * 0.5, ground + h * 0.18), width: w * 1.3, height: h * 0.42),
+    Ink2.fill(Colors.white.withValues(alpha: 0.12)),
+  );
+  // Twinkles.
+  for (var i = 0; i < 3; i++) {
+    final tw = (math.sin((f.loop * 3 + i * 0.37) * 2 * math.pi) * 0.5 + 0.5);
+    Ink2.sparkle(c, Offset(w * (0.08 + i * 0.36), h * (0.12 + (i % 2) * 0.1)), w * 0.022 * (0.4 + 0.6 * tw) * f.intro,
+        Colors.white.withValues(alpha: 0.8));
+  }
+
+  // The house rises in.
+  final rise = phase(f.intro, 0, 0.35, Curves.easeOutBack);
+  final hw = w * 0.5, hh = h * 0.42;
+  final left = w * 0.04, top = ground - hh * rise;
+  final body = Rect.fromLTWH(left, top, hw, hh * rise);
+  if (rise > 0.01) {
+    final roof = Color.lerp(_plum, f.scheme.primary, 0.25)!;
+    final wall = f.dark ? const Color(0xFFF3E3D3) : const Color(0xFFFFF4E6);
+    // Chimney and smoke.
+    final ch = Rect.fromLTWH(left + hw * 0.66, top - hh * 0.42, hw * 0.12, hh * 0.32);
+    Ink2.rrect(c, ch, 2, Ink2.fill(Color.lerp(roof, Colors.black, 0.25)!));
+    for (var i = 0; i < 3; i++) {
+      final t = (f.loop * 1.5 + i / 3) % 1;
+      c.drawCircle(
+        Offset(ch.center.dx + w * 0.02 * math.sin(t * 6), ch.top - h * 0.03 - t * h * 0.22),
+        w * (0.015 + 0.02 * t),
+        Ink2.fill(Colors.white.withValues(alpha: 0.45 * (1 - t) * f.intro)),
+      );
+    }
+    Ink2.rrect(c, body, 6, Ink2.fill(wall));
+    c.drawPath(
+      Path()
+        ..moveTo(left - hw * 0.1, top + hh * 0.06)
+        ..lineTo(left + hw / 2, top - hh * 0.5)
+        ..lineTo(left + hw * 1.1, top + hh * 0.06)
+        ..close(),
+      Ink2.fill(roof),
+    );
+    // Windows: one per room, lighting in turn.
+    for (var i = 0; i < 3; i++) {
+      final on = i < rooms.length ? phase(f.intro, 0.35 + i * 0.13, 0.5 + i * 0.13) : 0.0;
+      final flicker = i < rooms.length ? 0.85 + 0.15 * math.sin((f.loop * 2 + i * 0.3) * 2 * math.pi) : 1.0;
+      final tint = i < rooms.length ? Color.lerp(_gold, rooms[i], 0.35)! : _gold;
+      final win = Rect.fromLTWH(left + hw * (0.1 + i * 0.3), top + hh * 0.2, hw * 0.22, hh * 0.28);
+      final glass = Color.lerp(const Color(0xFF6D5A55), tint, on * flicker)!;
+      if (on > 0.3) Ink2.glow(c, win.center, hw * 0.24, tint.withValues(alpha: 0.4 * on));
+      Ink2.rrect(c, win, 3, Ink2.fill(glass));
+      c.drawLine(win.topCenter, win.bottomCenter, Ink2.stroke(wall, 1.2));
+    }
+    // Door.
+    Ink2.rrect(
+      c,
+      Rect.fromLTWH(left + hw * 0.42, ground - hh * 0.36 * rise, hw * 0.16, hh * 0.36 * rise),
+      3,
+      Ink2.fill(Color.lerp(roof, Colors.black, 0.2)!),
+    );
+  }
+
+  // The moving box, with things dropping in.
+  final pop = phase(f.intro, 0.25, 0.55, Curves.easeOutBack);
+  if (pop > 0.01) {
+    final bw = w * 0.3, bh = h * 0.26 * pop;
+    final box = Rect.fromLTWH(w * 0.64, ground - bh, bw, bh);
+    Ink2.shadow(c, Offset(box.center.dx, ground + 3), bw * 1.1, Colors.black);
+    final colors = [_gold, _leaf, Colors.white, if (rooms.isNotEmpty) rooms.first];
+    for (var i = 0; i < 3; i++) {
+      // Each thing falls over a third of the loop, then rests. Still frame:
+      // all resting in the box.
+      final t = ((f.loop * 3 - i) % 3).clamp(0.0, 1.0);
+      final falling = f.loop == 0 ? 1.0 : Curves.easeIn.transform(math.min(1, t * 1.4));
+      final landed = t > 0.71 && t < 0.9 ? math.sin((t - 0.71) / 0.19 * math.pi) : 0.0;
+      final x = box.left + bw * (0.25 + i * 0.25);
+      final r = w * 0.045;
+      final y = (box.top - r * 0.35) - (1 - falling) * h * 0.6;
+      c.save();
+      c.translate(x, y);
+      final appear = f.loop == 0 ? 1.0 : math.min(1.0, t * 6);
+      c.scale((1 + 0.25 * landed) * appear, (1 - 0.25 * landed) * appear);
+      final p = Ink2.fill(colors[(i + 1) % colors.length]);
+      switch (i) {
+        case 0:
+          c.drawCircle(Offset.zero, r, p);
+        case 1:
+          Ink2.rrect(c, Rect.fromCenter(center: Offset.zero, width: r * 2, height: r * 1.6), 2, p);
+        default:
+          c.drawPath(
+            Path()
+              ..moveTo(0, -r)
+              ..lineTo(r, r * 0.8)
+              ..lineTo(-r, r * 0.8)
+              ..close(),
+            p,
+          );
+      }
+      c.restore();
+    }
+    final card = Paint()
+      ..shader = const LinearGradient(colors: [Color(0xFFD7A86E), Color(0xFFB9824A)]).createShader(box);
+    Ink2.rrect(c, box, 4, card);
+    final flap = Ink2.fill(const Color(0xFFC8955A));
+    c.drawPath(
+      Path()..addPolygon([box.topLeft, box.topLeft.translate(-bw * 0.18, -bh * 0.25), box.topLeft.translate(bw * 0.3, 0)], true),
+      flap,
+    );
+    c.drawPath(
+      Path()..addPolygon([box.topRight, box.topRight.translate(bw * 0.18, -bh * 0.25), box.topRight.translate(-bw * 0.3, 0)], true),
+      flap,
+    );
+    c.drawLine(Offset(box.center.dx, box.top), Offset(box.center.dx, box.bottom), Ink2.stroke(const Color(0xFFE8C9A0), 3));
+  }
+};
