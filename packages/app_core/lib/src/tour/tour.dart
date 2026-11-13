@@ -579,20 +579,21 @@ class _BadgePainter extends CustomPainter {
           end: Alignment.bottomRight,
         ).createShader(disc),
     );
-    if (tourDiagLevel.value == 6 && ring >= 1) {
-      canvas.drawCircle(c, r + 3, Paint()..style = PaintingStyle.stroke..strokeWidth = 1.6..color = colors.last.withValues(alpha: 0.8));
-    } else canvas.drawArc(
-      Rect.fromCircle(center: c, radius: r + 3),
-      -math.pi / 2,
-      2 * math.pi * ring,
-      false,
-      Paint()
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.6
-        ..strokeCap = StrokeCap.round
-        ..color = colors.last.withValues(alpha: 0.8),
-    );
-    if (ring < 1) return;
+    // The ring draws itself in. No round caps: at the very start the arc has
+    // no length, and a zero-length round-capped arc is drawn as two caps on
+    // one point, which stopped the Android emulator's GPU dead. A whole turn
+    // is drawn as a circle.
+    final sweep = 2 * math.pi * ring;
+    final ringPaint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.6
+      ..color = colors.last.withValues(alpha: 0.8);
+    if (sweep >= 2 * math.pi - 1e-3) {
+      canvas.drawCircle(c, r + 3, ringPaint);
+    } else if (sweep > 0.01) {
+      canvas.drawArc(Rect.fromCircle(center: c, radius: r + 3), -math.pi / 2, sweep, false, ringPaint);
+    }
+    if (ring < 1 || tourDiagLevel.value == 6) return;
     for (var i = 0; i < 3; i++) {
       final a = 2 * math.pi * (orbit + i / 3);
       final p = c + Offset(math.cos(a), math.sin(a)) * (r + 3);

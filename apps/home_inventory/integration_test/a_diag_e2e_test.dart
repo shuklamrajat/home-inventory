@@ -58,11 +58,11 @@ void main() {
     }
     final container = ProviderScope.containerOf(tester.element(find.byType(HomeScreen)));
     final tour = container.read(tourControllerProvider.notifier);
-    for (final lv in const [0, 1, 2, 3, 4, 5, 6, 7, 99]) {
+    for (final lv in const [6, 7, 99]) {
       tourDiagLevel.value = lv;
       tour.start();
       print('HTDIAG tour level $lv start');
-      await hold(15);
+      await hold(25);
       print('HTDIAG tour level $lv survived');
       await tour.finish();
       await hold(2);
