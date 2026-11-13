@@ -1,0 +1,12 @@
+<14>[  299.755802] logd: logdr: UID=0 GID=0 PID=4495 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+<14>[  300.341013] logd: start watching /data/system/packages.list ...
+<14>[  300.403430] servicemanager: Notifying artd they do (previously: don't) have clients when service is guaranteed to be in use
+<14>[  300.406191] BpBinder: onLastStrongRef automatically unlinking death recipients: 
+<12>[  300.873102] logd: Skipping entries from slow reader, pid 4495, fd 16, from LogBuffer::Prune()
+<12>[  300.878628] logd: Skipping entries from slow reader, pid 464, fd 14, from LogBuffer::Prune()
+<12>[  303.768755] servicemanager: Isolated app with UID 99001 requested 'connectivity', but the service is not allowed for isolated apps.
+<12>[  303.794859] servicemanager: Isolated app with UID 99001 requested 'content_capture', but the service is not allowed for isolated apps.
+<12>[  304.219531] servicemanager: Isolated app with UID 99001 requested 'uimode', but the service is not allowed for isolated apps.
+<14>[  310.236343] servicemanager: Caller(pid=4719,uid=0,sid=u:r:su:s0) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<12>[  310.562401] healthd: battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+<14>[  317.368431] servicemanager: Caller(pid=4759,uid=0,sid=u:r:su:s0) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.

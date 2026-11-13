@@ -1,0 +1,400 @@
+11-13 13:51:56.517  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.517  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.517  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.518  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.518  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.518  1428  1803 I A       : (REDACTED) Setting session to type: %s
+11-13 13:51:56.518  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.518  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.518  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.518  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.518  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.518  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.519  1428  1803 I A       : (REDACTED) setNavBarVisible: %s
+11-13 13:51:56.519  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.520  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.520  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.520  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.520  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.520  1428  1803 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:51:56.520  1428  1803 I A       : (REDACTED) State changed: %s => %s by %s and %s with %s
+11-13 13:51:56.520  1428  1803 I A       : (REDACTED) Recognizer choice: (recognizer_type: %s, recognizer_mode: %s, choice_reason: %s)
+11-13 13:51:56.521  1428  1803 I A       : (REDACTED) onActiveStateChangeEvent: %s => %s
+11-13 13:51:56.522  1428  1803 I A       : (REDACTED) #onActiveStateChangeEvent, newState: %s, previousState: %s.
+11-13 13:51:56.523  1428  1804 I A       : (REDACTED) Nga on-device enabled based on TNG:MA active state: %b
+11-13 13:51:56.523  1428  1804 I A       : (REDACTED) Nga on-device enabled based on TNG:MA active state: %b
+11-13 13:51:56.572  1428  1803 I NgaEntryPointEventSendr: setupConnection
+11-13 13:51:56.573  1428  1804 I A       : Initialize
+11-13 13:51:56.574  1428  1804 I A       : (REDACTED) Nga on-device enabled based on TNG:MA active state: %b
+11-13 13:51:56.574  1428  1804 I A       : (REDACTED) stopListening(%s, %s)
+11-13 13:51:56.576  1428  1804 I INV.SystemUI: showGestureNav
+11-13 13:51:56.576  1428  1804 I INV.SystemUI: (REDACTED) setUiHints(hints = %s)
+11-13 13:51:56.577  1428  1804 I A       : Successfully initialized all components
+11-13 13:51:56.600  1428  1804 I INV.SystemUI: setUiHints: finished successfully
+11-13 13:51:56.605  1428  1803 I NgaEntryPointEventSendr: (REDACTED) State changed: %s => %s
+11-13 13:51:56.610  1428  1803 I NgaEntryPointEventSendr: onServiceConnected
+11-13 13:51:56.614  1474  2086 I A       : Calling beginBinderSession().
+11-13 13:51:56.615  1474  2086 I A       : beginBinderSession(): calling binder
+11-13 13:51:56.619  1428  1803 I NgaEntryPointEventSendr: (REDACTED) State changed: %s => %s
+11-13 13:51:56.683   358   358 I netd    : tetherGetStats() -> {[]} <0.32ms>
+11-13 13:51:56.757   553   575 W ActivityManager: Unable to start service Intent { cmp=com.google.android.apps.tachyon/.clientapi.ClientApiService } U=0: not found
+11-13 13:51:56.770  1474  2123 W A       : (REDACTED) %s task was not run. Callback from Service received after client was disposed.
+11-13 13:51:56.770  1474  2161 I PBSessionCacheImpl: (REDACTED) Deleted sessionId[%d] from persistence.
+11-13 13:51:56.772  1474  2123 W SearchServiceCore: Abort, client detached.
+11-13 13:51:56.774  1428  1803 I NgaEntryPointEventSendr: (REDACTED) State changed: %s => %s (%s)
+11-13 13:51:56.852  4589  4608 D EGL_emulation: app_time_stats: avg=78.00ms min=52.75ms max=105.33ms count=12
+11-13 13:51:57.677  4759  4759 W BpBinder: Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+11-13 13:51:57.677  4759  4759 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+11-13 13:51:57.711   146   146 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-13 13:51:57.712  4759  4761 I Gralloc4: mapper 4.x is not supported
+11-13 13:51:57.926  4589  4608 D EGL_emulation: app_time_stats: avg=80.25ms min=48.03ms max=122.08ms count=13
+11-13 13:51:58.804   553   591 D OomAdjuster: Not killing cached processes
+11-13 13:51:58.865  4762  4762 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 0 <<<<<<
+11-13 13:51:58.876  4762  4762 I AndroidRuntime: Using default boot image
+11-13 13:51:58.880  4762  4762 I AndroidRuntime: Leaving lock profiling enabled
+11-13 13:51:58.882  4762  4762 I app_process: Core platform API reporting enabled, enforcing=false
+11-13 13:51:58.885  4762  4762 I app_process: Using CollectorTypeCMC GC.
+11-13 13:51:58.955  4589  4608 D EGL_emulation: app_time_stats: avg=79.71ms min=57.66ms max=95.62ms count=12
+11-13 13:51:59.014  4762  4762 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+11-13 13:51:59.049  4762  4762 D nativeloader: Load libicu_jni.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+11-13 13:51:59.049  4762  4762 D app_process: u_setTimeZoneFilesDirectory("/apex/com.android.tzdata/etc/tz/versioned/8/icu") succeeded. 
+11-13 13:51:59.053  4762  4762 D app_process: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt75l.dat
+11-13 13:51:59.053  4762  4762 D nativeloader: Load libjavacore.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+11-13 13:51:59.061  4762  4762 D nativeloader: Load libopenjdk.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+11-13 13:51:59.062  4762  4762 W app_process: Unexpected CPU variant for x86: x86_64.
+11-13 13:51:59.062  4762  4762 W app_process: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+11-13 13:51:59.066  4762  4762 W app_process: ClassLoaderContext shared library size mismatch. Expected=2, found=0 (PCL[]{PCL[/system/framework/android.test.base.jar*724373495]#PCL[/system/framework/android.test.mock.jar*1452759902]} | PCL[])
+11-13 13:51:59.070  4762  4762 W app_process: ClassLoaderContext classpath size mismatch. expected=0, found=1 (PCL[]{PCL[/system/framework/android.test.runner.jar*2496447986]#PCL[/system/framework/android.test.base.jar*724373495]} | PCL[/system/framework/android.test.runner.jar*2496447986])
+11-13 13:51:59.146  4762  4762 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-13 13:51:59.147  4762  4762 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+11-13 13:51:59.156  4762  4762 D UiAutomationConnection: Created on user UserHandle{0}
+11-13 13:51:59.156  4762  4762 I UiAutomation: Initialized for user 0 on display 0
+11-13 13:51:59.156  4762  4762 W UiAutomation: Created with deprecatead constructor, assumes DEFAULT_DISPLAY
+11-13 13:51:59.157   553   575 D AccessibilityManagerService: changeCurrentUserForTestAutomationIfNeededLocked(0): ignoring because device doesn't support visible background users
+11-13 13:51:59.157   553   575 I UiAutomationManager: Registering UiTestAutomationService (id=com.android.server.accessibility/UiAutomation, flags=0x0) when called by user 0
+11-13 13:51:59.158   553   575 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+11-13 13:51:59.162   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.162   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.162   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.162   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.162   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.162   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.162   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.162   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.162   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.162   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.163   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.163   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.163   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.163   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.163   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.163   553   553 D BatterySaverPolicy: accessibility changed to true, updating policy.
+11-13 13:51:59.174  1474  1753 I A       : NGA disabled since it's running Panthera and at least one a11y feature is on.
+11-13 13:51:59.174  1474  1753 I A       : (REDACTED) Nga state changed to %s
+11-13 13:51:59.174  1474  1753 I A       : (REDACTED) isTngActive=%s
+11-13 13:51:59.177  4762  4774 V UiAutomation: Init UiAutomation@18b45dd[id=3, displayId=0, flags=0]
+11-13 13:51:59.182   553   575 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+11-13 13:51:59.182   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.182   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.182   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.182   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.182   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.182   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.182   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.182   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.182   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.182   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:51:59.184  1428  1804 I A       : (REDACTED) Nga on-device enabled based on TNG:MA active state: %b
+11-13 13:51:59.184  1428  1804 I A       : (REDACTED) Nga on-device enabled based on TNG:MA active state: %b
+11-13 13:51:59.184  1428  1804 I A       : Unsubscribed to apa or classic variant change.
+11-13 13:51:59.190   908  1214 D AccessibilitySourceService: enabled a11y services count 0
+11-13 13:51:59.190   908  1214 D AccessibilitySourceService: a11y source sending 0 issue to sc
+11-13 13:51:59.190   553   575 D SafetySourceDataValidat: No cert check requested for package com.google.android.permissioncontroller
+11-13 13:51:59.232  1415  2461 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-13 13:51:59.233  1415  2461 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-13 13:51:59.235  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:51:59.235  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:51:59.235  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:51:59.235  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:51:59.236  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:51:59.236  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:51:59.236  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:51:59.236  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:51:59.236  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:51:59.236  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:51:59.236  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:51:59.236  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:51:59.236  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:51:59.236  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:51:59.236  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-13 13:51:59.236  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-13 13:51:59.236  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-13 13:51:59.236  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-13 13:51:59.242   907   907 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-13 13:51:59.242   907   907 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-13 13:51:59.252  4425  4425 D SsBaseTemplateCard: No text view can be set up
+11-13 13:51:59.252  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:51:59.252  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:51:59.252  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:51:59.252  4425  4425 I SsBaseTemplateCard: Secondary card pane is null
+11-13 13:51:59.252  4425  4425 D SsBaseTemplateCard: No text view can be set up
+11-13 13:51:59.252  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:51:59.252  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:51:59.252  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:51:59.252  4425  4425 I SsBaseTemplateCard: Secondary card pane is null
+11-13 13:51:59.256  1530  1530 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+11-13 13:51:59.349  4589  4603 D EGL_emulation: app_time_stats: avg=2844.42ms min=2844.42ms max=2844.42ms count=1
+11-13 13:51:59.961  4589  4608 D EGL_emulation: app_time_stats: avg=87.93ms min=55.98ms max=119.32ms count=11
+11-13 13:52:00.118  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:52:00.118  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:52:00.118  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:52:00.118  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:00.118  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:00.119  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:52:00.119  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:52:00.119  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:52:00.119  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:52:00.119  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:00.119  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:00.119  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:52:00.119  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-13 13:52:00.119  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-13 13:52:00.119   907   907 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-13 13:52:00.131  4425  4425 D SsBaseTemplateCard: No text view can be set up
+11-13 13:52:00.131  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:00.131  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:00.131  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:00.131  4425  4425 I SsBaseTemplateCard: Secondary card pane is null
+11-13 13:52:00.207   907  1048 D EGL_emulation: app_time_stats: avg=4314.52ms min=9.37ms max=16968.48ms count=4
+11-13 13:52:00.267  4762  4762 W AccessibilityNodeInfoDumper: Fetch time: 6ms
+11-13 13:52:00.270   553  1909 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+11-13 13:52:00.270   553  1909 D AccessibilityManagerService: restoreCurrentUserForTestAutomationIfNeededLocked(): ignoring because device doesn't support visible background users
+11-13 13:52:00.272  1415  1776 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-13 13:52:00.273  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:52:00.273  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:52:00.273  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:52:00.273  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:00.273  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:00.273  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:52:00.274  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:52:00.274  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:52:00.274  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:52:00.274  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:00.275   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.275   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.275   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.275   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.276   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.276   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.276   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.276   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.276   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.277  1474  1753 I A       : NGA enabled in interactor.
+11-13 13:52:00.277  1474  1753 I A       : (REDACTED) Nga state changed to %s
+11-13 13:52:00.277  1474  1753 I A       : (REDACTED) isTngActive=%s
+11-13 13:52:00.281  1428  3894 I A       : Initializing all components
+11-13 13:52:00.281   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.281  1428  1804 I A       : (REDACTED) onIsEnabledChanged, isEnabled: %s
+11-13 13:52:00.281  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.281  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.281  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.281  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.281  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.281  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.281  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.281  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.283  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:00.293  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:52:00.294  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-13 13:52:00.294  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-13 13:52:00.329  1428  1803 I A       : (REDACTED) Nga on-device enabled based on TNG:MA active state: %b
+11-13 13:52:00.330  1428  1803 I A       : (REDACTED) State changed: %s => %s by %s and %s with %s
+11-13 13:52:00.330  1428  1803 I A       : (REDACTED) Recognizer choice: (recognizer_type: %s, recognizer_mode: %s, choice_reason: %s)
+11-13 13:52:00.331  1428  1803 I A       : (REDACTED) onActiveStateChangeEvent: %s => %s
+11-13 13:52:00.333   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.333   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.333   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.333   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.334   907   907 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-13 13:52:00.334   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.334   553   553 D BatterySaverPolicy: accessibility changed to false, updating policy.
+11-13 13:52:00.336  4425  4425 D SsBaseTemplateCard: No text view can be set up
+11-13 13:52:00.336  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:00.336  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:00.336  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:00.336  4425  4425 I SsBaseTemplateCard: Secondary card pane is null
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 I A       : (REDACTED) Setting session to type: %s
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 I A       : (REDACTED) setNavBarVisible: %s
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.337  1428  1804 W A       : Disposing empty manager. Did you forgot to subscribe observables?
+11-13 13:52:00.339  1428  1804 I A       : (REDACTED) Nga on-device enabled based on TNG:MA active state: %b
+11-13 13:52:00.341  1428  1804 I A       : Initialize
+11-13 13:52:00.341  1428  1804 I A       : (REDACTED) stopListening(%s, %s)
+11-13 13:52:00.343  1428  1804 I NgaEntryPointEventSendr: setupConnection
+11-13 13:52:00.351  4762  4762 D AndroidRuntime: Shutting down VM
+11-13 13:52:00.357  1428  1803 I A       : (REDACTED) #onActiveStateChangeEvent, newState: %s, previousState: %s.
+11-13 13:52:00.368  1428  1804 I NgaEntryPointEventSendr: (REDACTED) State changed: %s => %s
+11-13 13:52:00.368  1428  1804 I A       : (REDACTED) on opa visibility changed %s
+11-13 13:52:00.368  1428  1804 I A       : (REDACTED) on opa visibility changed %s
+11-13 13:52:00.372  4589  4603 D EGL_emulation: app_time_stats: avg=1023.30ms min=1023.30ms max=1023.30ms count=1
+11-13 13:52:00.384  1428  1804 I A       : (REDACTED) Nga on-device enabled based on TNG:MA active state: %b
+11-13 13:52:00.393  1428  1804 I A       : Successfully initialized all components
+11-13 13:52:00.394  1428  1804 I INV.SystemUI: showGestureNav
+11-13 13:52:00.395  1428  1804 I INV.SystemUI: (REDACTED) setUiHints(hints = %s)
+11-13 13:52:00.401  1428  1804 I INV.SystemUI: setUiHints: finished successfully
+11-13 13:52:00.421  1428  1803 I NgaEntryPointEventSendr: onServiceConnected
+11-13 13:52:00.422  1474  2092 I A       : Calling beginBinderSession().
+11-13 13:52:00.422  1474  2092 I A       : beginBinderSession(): calling binder
+11-13 13:52:00.422  1428  1803 I NgaEntryPointEventSendr: (REDACTED) State changed: %s => %s
+11-13 13:52:00.461   358   358 I netd    : tetherGetStats() -> {[]} <1.17ms>
+11-13 13:52:00.465   553  1909 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:00.492   553  1121 W ActivityManager: Unable to start service Intent { cmp=com.google.android.apps.tachyon/.clientapi.ClientApiService } U=0: not found
+11-13 13:52:00.501  1428  1803 I Ma-fcf  : (REDACTED) #FCF: Demo mode check status : %s
+11-13 13:52:00.509  1428  1804 I Ma-fcf  : (REDACTED) #FCF: Managed profile check status : %s
+11-13 13:52:00.518  1428  1804 I Ma-fcf-tngMaStatus: (REDACTED) #FCF evaluate: %s
+11-13 13:52:00.518  1428  1804 I Ma-fcf-tngMaStatus: (REDACTED) TngMaStatusChecker#evaluateInternal completed in %s millis
+11-13 13:52:00.524  1474  2123 W A       : (REDACTED) %s task was not run. Callback from Service received after client was disposed.
+11-13 13:52:00.524  1474  2123 W A       : (REDACTED) %s task was not run. Callback from Service received after client was disposed.
+11-13 13:52:00.526  1428  1803 I Ma-fcf-RobinAvailabilityChecker: User not OptedIn. Skipping Eligibility Checks.
+11-13 13:52:00.526  1428  1803 I Ma-fcf-headphone-integration: Headphone voice queries disabled: HEADPHONE_VOICE_QUERIES flag not enabled
+11-13 13:52:00.526  1428  1803 I Ma-fcf-headphone-integration: Headphone notification anouncement disabled: ENABLE_NOTIFICATION_ANNOUNCEMENT flag not enabled
+11-13 13:52:00.526  1428  1803 I Ma-fcf  : (REDACTED) #FCF: Assistant primary locale : %s
+11-13 13:52:00.532  1428  1804 I NgaEntryPointEventSendr: (REDACTED) State changed: %s => %s (%s)
+11-13 13:52:00.536  1474  2123 W A       : (REDACTED) %s task was not run. Callback from Service received after client was disposed.
+11-13 13:52:00.537  1428  1803 I Ma-fcf  : (REDACTED) #FCF: Assistant Primary locale check status : %s
+11-13 13:52:00.539  1474  2161 I PBSessionCacheImpl: (REDACTED) Deleted sessionId[%d] from persistence.
+11-13 13:52:00.551  1474  2123 W SearchServiceCore: Abort, client detached.
+11-13 13:52:00.567  1428  1803 I Ma-fcf  : (REDACTED) FCF System FeatureName to check: %s
+11-13 13:52:00.568  1428  1803 I Ma-fcf  : (REDACTED) FCF: Device model check status : %s
+11-13 13:52:00.662  1428  3897 V ClearcutMetricXmitter: Transmission is done.
+11-13 13:52:00.985  4589  4608 D EGL_emulation: app_time_stats: avg=80.73ms min=47.26ms max=126.19ms count=12
+11-13 13:52:01.671   907  1048 D EGL_emulation: app_time_stats: avg=729.84ms min=386.56ms max=1073.12ms count=2
+11-13 13:52:01.996  4589  4608 D EGL_emulation: app_time_stats: avg=98.29ms min=57.79ms max=275.76ms count=10
+11-13 13:52:02.815  4793  4793 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 0 <<<<<<
+11-13 13:52:02.820  4793  4793 I AndroidRuntime: Using default boot image
+11-13 13:52:02.820  4793  4793 I AndroidRuntime: Leaving lock profiling enabled
+11-13 13:52:02.822  4793  4793 I app_process: Core platform API reporting enabled, enforcing=false
+11-13 13:52:02.822  4793  4793 I app_process: Using CollectorTypeCMC GC.
+11-13 13:52:02.871  4793  4793 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+11-13 13:52:02.878  4793  4793 D nativeloader: Load libicu_jni.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+11-13 13:52:02.878  4793  4793 D app_process: u_setTimeZoneFilesDirectory("/apex/com.android.tzdata/etc/tz/versioned/8/icu") succeeded. 
+11-13 13:52:02.878  4793  4793 D app_process: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt75l.dat
+11-13 13:52:02.879  4793  4793 D nativeloader: Load libjavacore.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+11-13 13:52:02.880  4793  4793 D nativeloader: Load libopenjdk.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+11-13 13:52:02.882  4793  4793 W app_process: Unexpected CPU variant for x86: x86_64.
+11-13 13:52:02.882  4793  4793 W app_process: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+11-13 13:52:02.883  4793  4793 W app_process: ClassLoaderContext shared library size mismatch. Expected=2, found=0 (PCL[]{PCL[/system/framework/android.test.base.jar*724373495]#PCL[/system/framework/android.test.mock.jar*1452759902]} | PCL[])
+11-13 13:52:02.884  4793  4793 W app_process: ClassLoaderContext classpath size mismatch. expected=0, found=1 (PCL[]{PCL[/system/framework/android.test.runner.jar*2496447986]#PCL[/system/framework/android.test.base.jar*724373495]} | PCL[/system/framework/android.test.runner.jar*2496447986])
+11-13 13:52:02.899  4793  4793 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-13 13:52:02.900  4793  4793 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+11-13 13:52:02.902  4793  4793 D UiAutomationConnection: Created on user UserHandle{0}
+11-13 13:52:02.903  4793  4793 I UiAutomation: Initialized for user 0 on display 0
+11-13 13:52:02.903  4793  4793 W UiAutomation: Created with deprecatead constructor, assumes DEFAULT_DISPLAY
+11-13 13:52:02.904   553  1909 D AccessibilityManagerService: changeCurrentUserForTestAutomationIfNeededLocked(0): ignoring because device doesn't support visible background users
+11-13 13:52:02.904   553  1909 I UiAutomationManager: Registering UiTestAutomationService (id=com.android.server.accessibility/UiAutomation, flags=0x0) when called by user 0
+11-13 13:52:02.905   553  1909 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+11-13 13:52:02.906  1415  2461 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-13 13:52:02.906   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.906   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.906   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.906   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.907   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.907  4793  4805 V UiAutomation: Init UiAutomation@2bca201[id=4, displayId=0, flags=0]
+11-13 13:52:02.908   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.908   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.909  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:52:02.909  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:52:02.909  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:52:02.909  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:02.910   553   642 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+11-13 13:52:02.910  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:02.910  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:52:02.910   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.910  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:52:02.910  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:52:02.910  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:52:02.910  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:02.910  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:02.910  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:52:02.910  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-13 13:52:02.910  1474  1692 I A       : NGA disabled since it's running Panthera and at least one a11y feature is on.
+11-13 13:52:02.910  1474  1692 I A       : (REDACTED) Nga state changed to %s
+11-13 13:52:02.911  1474  1692 I A       : (REDACTED) isTngActive=%s
+11-13 13:52:02.911  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-13 13:52:02.911  4425  4425 D SsBaseTemplateCard: No text view can be set up
+11-13 13:52:02.911   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.912   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.912   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.912   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.914   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.914   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.914   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.914   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.914   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.914   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.914   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.914   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.914   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.914   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.916  1428  1804 I A       : (REDACTED) Nga on-device enabled based on TNG:MA active state: %b
+11-13 13:52:02.916  1428  1804 I A       : (REDACTED) Nga on-device enabled based on TNG:MA active state: %b
+11-13 13:52:02.916  1428  1804 I A       : Unsubscribed to apa or classic variant change.
+11-13 13:52:02.918  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:02.918  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:02.918  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:02.918  4425  4425 I SsBaseTemplateCard: Secondary card pane is null
+11-13 13:52:02.922  1415  1776 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-13 13:52:02.922  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:52:02.922  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:52:02.922  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:52:02.922  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:02.922  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:02.922  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:52:02.922  1415  1608 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 13:52:02.922  1415  1608 I AiAiEcho: EchoTargets: 
+11-13 13:52:02.922  1415  1608 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 13:52:02.922  1415  1608 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:02.922  1415  1608 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 13:52:02.922  1415  1608 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 13:52:02.922  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-13 13:52:02.923  1415  1608 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-13 13:52:02.923  4425  4425 D SsBaseTemplateCard: No text view can be set up
+11-13 13:52:02.923  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:02.923  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:02.923  4425  4425 D SsBaseTemplateCard: Passed-in item info is null
+11-13 13:52:02.923  4425  4425 I SsBaseTemplateCard: Secondary card pane is null
+11-13 13:52:02.925   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.926   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.926   553   553 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 13:52:02.926   553   553 D BatterySaverPolicy: accessibility changed to true, updating policy.
+11-13 13:52:02.927   907   907 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-13 13:52:02.927   907   907 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-13 13:52:02.953   908  1214 D AccessibilitySourceService: enabled a11y services count 0
+11-13 13:52:02.953   908  1214 D AccessibilitySourceService: a11y source sending 0 issue to sc
+11-13 13:52:02.954   553  2351 D SafetySourceDataValidat: No cert check requested for package com.google.android.permissioncontroller
+11-13 13:52:02.979  4589  4603 D EGL_emulation: app_time_stats: avg=2607.11ms min=2607.11ms max=2607.11ms count=1
+11-13 13:52:03.306  4589  4608 D EGL_emulation: app_time_stats: avg=648.34ms min=343.02ms max=953.66ms count=2
+11-13 13:52:03.307  4425  4446 D EGL_emulation: app_time_stats: avg=2917.09ms min=15.63ms max=20084.87ms count=7
