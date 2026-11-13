@@ -1,0 +1,4 @@
+Device: pixel_fold API 35, part: release
+Release APK session: 5/6 checks passed
+  FAIL the session finished without an error: want None, got 'the row for "Edit item" never appeared, even after scrolling. On screen: [\'$0.00\', \'$300.00\', \'0 items\', \'1\', \'1 item\', \'5\', \'Add item\', \'Bedroom\', \'Garage\', \'HOME VALUE\', \'Housetally\', \'Housetally logo\', \'Items\', \'Office\', \'Rooms\', \'Settings\', \'Show menu\', \'Tab 1 of 3\', \'Tab 2 of 3\', \'Tab 3 of 3\', '
+RESULT: release on pixel_fold API 35 FAILED
