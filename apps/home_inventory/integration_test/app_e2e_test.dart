@@ -255,7 +255,10 @@ void main() {
             await tester.pump();
             sawConfetti |= find.byKey(const Key('celebration')).evaluate().isNotEmpty;
           }
-          log.check('confetti plays after buying Pro', true, sawConfetti);
+          // The phone's own setting: with animations turned off, the app skips the
+          // confetti on purpose (Motion.reduced).
+          final motionOff = MediaQuery.maybeDisableAnimationsOf(tester.element(find.byType(Scaffold).first)) ?? false;
+          log.check(motionOff ? 'no confetti with animations off' : 'confetti plays after buying Pro', !motionOff, sawConfetti);
           await tester.pumpAndSettle();
           log.check('confetti cleared once landed', 0, find.byKey(const Key('celebration')).evaluate().length);
         }
