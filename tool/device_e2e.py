@@ -33,6 +33,7 @@ Usage: device_e2e.py --apk universal.apk --package com.x.y --out out/
 """
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
@@ -515,6 +516,14 @@ def housetally():
     wait('Skip', timeout=40)
     check('first screen: onboarding shows', True, bool(find('Skip')))
     tap('Skip')
+    if os.environ.get('DIAG_NODUMP'):
+        # DIAG ONLY: after one Skip, watch with screenshots alone (no
+        # accessibility dumps) to see whether the emulator still stops.
+        for i in range(18):
+            time.sleep(5)
+            shot(f'diag-{i:02d}')
+            check(f'diag: emulator alive {5 * (i + 1)} s after Skip', True, device_ok())
+        return
     skip_tour()
     check('set up: the home screen shows', True, bool(wait('Add item')))
     tap('Add item')

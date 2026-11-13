@@ -108,7 +108,6 @@ class _ScenePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    if (const bool.fromEnvironment("DIAG", defaultValue: true)) return; // DIAG ONLY: no scenes drawn
     canvas.save();
     canvas.clipRect(Offset.zero & size);
     fn(canvas, size, SceneFrame(intro: intro.value, loop: loop.value, scheme: scheme, brand: brand));
