@@ -1,0 +1,3 @@
+Device: pixel_fold API 35, part: release
+Release APK session: no result ([Errno 2] No such file or directory: '/home/runner/work/home-inventory/home-inventory/device-e2e/pixel_fold/release/release/result.json')
+RESULT: release on pixel_fold API 35 FAILED
