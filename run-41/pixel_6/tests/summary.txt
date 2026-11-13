@@ -1,0 +1,6 @@
+Device: pixel_6 API 35, part: tests
+PASS ads_e2e_test (109s)
+FAIL app_e2e_test (900s, over its 15-minute limit):
+PASS free_build_e2e_test (67s)
+PASS tour_e2e_test (56s)
+RESULT: tests on pixel_6 API 35 FAILED
