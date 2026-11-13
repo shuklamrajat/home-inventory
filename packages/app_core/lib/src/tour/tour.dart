@@ -541,7 +541,23 @@ class _StepBadgeState extends State<_StepBadge> with TickerProviderStateMixin {
   }
 
   @override
-  Widget build(BuildContext context) => SizedBox.square(
+  Widget build(BuildContext context) {
+    final v = tourDiagLevel.value;
+    if (v == 61) {
+      // disc only, painted once
+      return SizedBox.square(dimension: 52, child: CustomPaint(painter: _DiscOnly(widget.colors)));
+    }
+    if (v == 62) {
+      return SizedBox.square(dimension: 52, child: Center(child: Icon(widget.icon, color: widget.onBrand, size: 24)));
+    }
+    if (v == 63) {
+      _orbit.stop();
+    }
+    if (v == 64 || v == 65) return _SafeBadge(icon: widget.icon, colors: widget.colors, onBrand: widget.onBrand, sparks: v == 65);
+    return _oldBuild();
+  }
+
+  Widget _oldBuild() => SizedBox.square(
     dimension: 52,
     child: AnimatedBuilder(
       animation: Listenable.merge([_ring, _orbit]),
@@ -556,6 +572,98 @@ class _StepBadgeState extends State<_StepBadge> with TickerProviderStateMixin {
       child: Icon(widget.icon, color: widget.onBrand, size: 24),
     ),
   );
+}
+
+class _DiscOnly extends CustomPainter {
+  _DiscOnly(this.colors);
+  final List<Color> colors;
+  @override
+  void paint(Canvas canvas, Size size) {
+    final c = size.center(Offset.zero);
+    final r = size.shortestSide / 2 - 5;
+    canvas.drawCircle(c, r, Paint()..shader = LinearGradient(colors: colors, begin: Alignment.topLeft, end: Alignment.bottomRight).createShader(Rect.fromCircle(center: c, radius: r)));
+  }
+  @override
+  bool shouldRepaint(_DiscOnly old) => false;
+}
+
+/// Candidate rewrite: a decorated gradient disc, a static ring, a one-shot
+/// scale-in, and (optionally) sparks that turn as one rotating layer.
+class _SafeBadge extends StatefulWidget {
+  const _SafeBadge({required this.icon, required this.colors, required this.onBrand, required this.sparks});
+  final IconData icon;
+  final List<Color> colors;
+  final Color onBrand;
+  final bool sparks;
+  @override
+  State<_SafeBadge> createState() => _SafeBadgeState();
+}
+
+class _SafeBadgeState extends State<_SafeBadge> with SingleTickerProviderStateMixin {
+  late final AnimationController _spin = AnimationController(vsync: this, duration: const Duration(seconds: 4));
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (widget.sparks && Motion.ambient && !Motion.reduced(context)) {
+      if (!_spin.isAnimating) _spin.repeat();
+    } else {
+      _spin.stop();
+    }
+  }
+  @override
+  void dispose() {
+    _spin.dispose();
+    super.dispose();
+  }
+  @override
+  Widget build(BuildContext context) => SizedBox.square(
+    dimension: 52,
+    child: Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          width: 46, height: 46,
+          decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: widget.colors.last.withValues(alpha: 0.8), width: 1.6)),
+        ),
+        TweenAnimationBuilder<double>(
+          tween: Tween(begin: 0.7, end: 1),
+          duration: Motion.of(context, 650),
+          curve: Curves.easeOutCubic,
+          builder: (_, s, child) => Transform.scale(scale: s, child: child),
+          child: Container(
+            width: 42, height: 42,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(colors: widget.colors, begin: Alignment.topLeft, end: Alignment.bottomRight),
+            ),
+            alignment: Alignment.center,
+            child: Icon(widget.icon, color: widget.onBrand, size: 24),
+          ),
+        ),
+        if (widget.sparks)
+          RotationTransition(
+            turns: _spin,
+            child: SizedBox.square(dimension: 52, child: CustomPaint(painter: _Sparks(widget.colors))),
+          ),
+      ],
+    ),
+  );
+}
+
+class _Sparks extends CustomPainter {
+  _Sparks(this.colors);
+  final List<Color> colors;
+  @override
+  void paint(Canvas canvas, Size size) {
+    final c = size.center(Offset.zero);
+    final r = size.shortestSide / 2 - 2;
+    for (var i = 0; i < 3; i++) {
+      final a = 2 * math.pi * i / 3;
+      canvas.drawCircle(c + Offset(math.cos(a), math.sin(a)) * r, i == 0 ? 2.6 : 1.8, Paint()..color = colors[i % colors.length]);
+    }
+  }
+  @override
+  bool shouldRepaint(_Sparks old) => false;
 }
 
 class _BadgePainter extends CustomPainter {
@@ -593,7 +701,7 @@ class _BadgePainter extends CustomPainter {
     } else if (sweep > 0.01) {
       canvas.drawArc(Rect.fromCircle(center: c, radius: r + 3), -math.pi / 2, sweep, false, ringPaint);
     }
-    if (ring < 1 || tourDiagLevel.value == 6) return;
+    if (ring < 1 || tourDiagLevel.value == 6 || tourDiagLevel.value == 63) return;
     for (var i = 0; i < 3; i++) {
       final a = 2 * math.pi * (orbit + i / 3);
       final p = c + Offset(math.cos(a), math.sin(a)) * (r + 3);

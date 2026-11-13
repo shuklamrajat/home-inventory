@@ -102,6 +102,7 @@ art=/data/user/0/$pkg/cache/e2e
 status=0
 for t in "$app"/integration_test/*_test.dart; do
   name=$(basename "$t" .dart)
+  [ -n "${ONLY_TEST:-}" ] && [ "$name" != "$ONLY_TEST" ] && continue
   if ! device_ok; then
     echo "$name: not run, the emulator stopped answering" | tee -a "$out/summary.txt"
     [ $status -eq 0 ] && status=3
@@ -110,7 +111,7 @@ for t in "$app"/integration_test/*_test.dart; do
   timeout 30 adb logcat -c 2>/dev/null || true
   start=$(date +%s)
   (cd "$app" && timeout 900 flutter test "integration_test/$name.dart" -d "$dev" --reporter expanded \
-    --dart-define=ARTIFACT_DIR="$art" \
+    --dart-define=ARTIFACT_DIR="$art" --dart-define=TOUR_VARIANT="${TOUR_VARIANT:-99}" \
     --dart-define=ADMOB_BANNER_ID=ca-app-pub-0000000000000000/0000000000) > "$out/$name.log" 2>&1
   rc=$?
   grep -E "HTDIAG" "$out/$name.log" | tail -n 25 || true

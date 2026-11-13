@@ -58,15 +58,18 @@ void main() {
     }
     final container = ProviderScope.containerOf(tester.element(find.byType(HomeScreen)));
     final tour = container.read(tourControllerProvider.notifier);
-    for (final lv in const [6, 7, 99]) {
-      tourDiagLevel.value = lv;
-      tour.start();
-      print('HTDIAG tour level $lv start');
-      await hold(25);
-      print('HTDIAG tour level $lv survived');
-      await tour.finish();
-      await hold(2);
+    const variant = int.fromEnvironment('TOUR_VARIANT', defaultValue: 99);
+    tourDiagLevel.value = variant;
+    tour.start();
+    print('HTDIAG tour variant $variant start');
+    for (var step = 0; step < 3; step++) {
+      await hold(20);
+      print('HTDIAG tour variant $variant step $step survived');
+      tour.next();
     }
+    await tour.finish();
+    await hold(2);
+    print('HTDIAG tour variant $variant done');
     semantics.dispose();
     await tester.pumpWidget(const SizedBox.shrink());
     await db.close();
