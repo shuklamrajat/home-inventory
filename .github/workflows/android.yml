@@ -310,7 +310,7 @@ jobs:
           # The app's own tests run with animations off; the release session
           # turns them back on, like a real phone.
           disable-animations: true
-          emulator-options: -no-window -no-snapshot-save -gpu ${{ matrix.gpu }} ${{ (matrix.audio == '-noaudio' || matrix.audio == 'sound-effects-off') && '-noaudio' || '' }} -no-boot-anim -camera-back none
+          emulator-options: -no-window -no-snapshot-save -show-kernel -gpu ${{ matrix.gpu }} ${{ (matrix.audio == '-noaudio' || matrix.audio == 'sound-effects-off') && '-noaudio' || '' }} -no-boot-anim -camera-back none
           script: DIAG_NODUMP=1 SOUND_OFF=${{ matrix.audio == 'sound-effects-off' && '1' || '0' }} STATUS_FILE="$RUNNER_TEMP/part-status" bash tool/device_part.sh ${{ matrix.part }} universal.apk "$PLAY_PACKAGE" "$APP_DIR" "$OUT" "${{ matrix.device }} API ${{ matrix.api }}"
 
       - name: Read the result
@@ -333,7 +333,7 @@ jobs:
           # The app's own tests run with animations off; the release session
           # turns them back on, like a real phone.
           disable-animations: true
-          emulator-options: -no-window -no-snapshot-save -gpu ${{ matrix.gpu }} ${{ (matrix.audio == '-noaudio' || matrix.audio == 'sound-effects-off') && '-noaudio' || '' }} -no-boot-anim -camera-back none
+          emulator-options: -no-window -no-snapshot-save -show-kernel -gpu ${{ matrix.gpu }} ${{ (matrix.audio == '-noaudio' || matrix.audio == 'sound-effects-off') && '-noaudio' || '' }} -no-boot-anim -camera-back none
           script: DIAG_NODUMP=1 SOUND_OFF=${{ matrix.audio == 'sound-effects-off' && '1' || '0' }} STATUS_FILE="$RUNNER_TEMP/part-status" bash tool/device_part.sh ${{ matrix.part }} universal.apk "$PLAY_PACKAGE" "$APP_DIR" "$OUT" "${{ matrix.device }} API ${{ matrix.api }}"
 
       - name: Pass/fail report
