@@ -1,0 +1,16 @@
+11-13 18:39:29.977   557   591 W ActivityManager: Slow operation: 112ms so far, now at startProcess: returned from zygote!
+11-13 18:39:29.978   557   591 W ActivityManager: Slow operation: 113ms so far, now at startProcess: done updating battery stats
+11-13 18:39:29.978   557   591 W ActivityManager: Slow operation: 113ms so far, now at startProcess: building log message
+11-13 18:39:29.979   557   591 W ActivityManager: Slow operation: 113ms so far, now at startProcess: starting to update pids map
+11-13 18:39:29.990   557   591 W ActivityManager: Slow operation: 125ms so far, now at startProcess: done updating pids map
+11-13 18:42:32.566  1070  1207 F libc    : Fatal signal 6 (SIGABRT), code -1 (SI_QUEUE) in tid 1207 (bt_stack_manage), pid 1070 (droid.bluetooth)
+11-13 18:42:35.142   557   591 W ActivityManager: Slow operation: 132ms so far, now at startProcess: returned from zygote!
+11-13 18:42:35.334   557   591 W ActivityManager: Slow operation: 324ms so far, now at startProcess: done updating battery stats
+11-13 18:42:35.334   557   591 W ActivityManager: Slow operation: 324ms so far, now at startProcess: building log message
+11-13 18:42:35.335   557   591 W ActivityManager: Slow operation: 325ms so far, now at startProcess: starting to update pids map
+11-13 18:42:35.335   557   591 W ActivityManager: Slow operation: 325ms so far, now at startProcess: done updating pids map
+11-13 18:44:01.816   557   591 W ActivityManager: Slow operation: 188ms so far, now at startProcess: returned from zygote!
+11-13 18:44:01.819   557   591 W ActivityManager: Slow operation: 192ms so far, now at startProcess: done updating battery stats
+11-13 18:44:01.819   557   591 W ActivityManager: Slow operation: 192ms so far, now at startProcess: building log message
+11-13 18:44:01.819   557   591 W ActivityManager: Slow operation: 192ms so far, now at startProcess: starting to update pids map
+11-13 18:44:01.819   557   591 W ActivityManager: Slow operation: 192ms so far, now at startProcess: done updating pids map
