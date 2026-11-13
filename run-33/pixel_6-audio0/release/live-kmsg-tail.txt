@@ -1,0 +1,10 @@
+<14>[  273.221523] logd: logdr: UID=0 GID=0 PID=4473 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+<14>[  273.743330] servicemanager: Caller(pid=553,uid=1000,sid=u:r:system_server:s0) Since 'artd' could not be found trying to start it as a lazy AIDL service. (if it's not configured to be a lazy service, it may be stuck starting or still starting).
+<14>[  273.747706] init: starting service 'artd'...
+<14>[  273.767088] init: ... started service 'artd' has pid 4515
+<14>[  273.768404] init: Control message: Processed ctl.interface_start for 'aidl/artd' from pid: 145 (/system/bin/servicemanager)
+<14>[  273.805716] servicemanager: Notifying artd they do (previously: don't) have clients when service is guaranteed to be in use
+<14>[  273.808670] BpBinder: onLastStrongRef automatically unlinking death recipients: 
+<36>[  275.840626] type=1400 audit(1794584479.207:51): avc:  denied  { read } for  comm="ajat.housetally" name="max_map_count" dev="proc" ino=36043 scontext=u:r:untrusted_app:s0:c209,c256,c512,c768 tcontext=u:object_r:proc_max_map_count:s0 tclass=file permissive=0 app=com.shuklamrajat.housetally
+<14>[  276.281712] servicemanager: Caller(pid=4558,uid=10209,sid=u:r:untrusted_app:s0:c209,c256,c512,c768) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<14>[  291.555795] servicemanager: Caller(pid=4757,uid=0,sid=u:r:su:s0) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
