@@ -113,6 +113,7 @@ for t in "$app"/integration_test/*_test.dart; do
     --dart-define=ARTIFACT_DIR="$art" \
     --dart-define=ADMOB_BANNER_ID=ca-app-pub-0000000000000000/0000000000) > "$out/$name.log" 2>&1
   rc=$?
+  grep -E "HTDIAG" "$out/$name.log" | tail -n 25 || true
   timeout 60 adb logcat -d > "$out/$name-logcat.txt" 2>/dev/null || true
   mkdir -p "$out/files/$name"
   timeout 60 adb shell run-as "$pkg" tar -cf - cache/e2e 2>/dev/null | tar -xf - -C "$out/files/$name" 2>/dev/null || true

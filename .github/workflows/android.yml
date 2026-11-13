@@ -189,7 +189,7 @@ jobs:
       fail-fast: false
       matrix:
         device: [pixel_6]
-        part: [release]
+        part: [tests]
         api: [35]
         gpu: [swiftshader_indirect]
         audio: ['-noaudio']

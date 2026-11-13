@@ -14,6 +14,9 @@ import 'format.dart';
 import 'item_edit_screen.dart';
 import 'scenes.dart';
 
+/// DIAG ONLY: how much of the home screen to build (99 = all of it).
+final homeDiagLevel = ValueNotifier<int>(99);
+
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
@@ -59,7 +62,40 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ValueListenableBuilder<int>(
+    valueListenable: homeDiagLevel,
+    builder: (context, lv, _) => _diagBuild(context, lv),
+  );
+
+  Widget _diagBuild(BuildContext context, int lv) {
+    final nav = NavigationBar(
+      selectedIndex: _tab,
+      onDestinationSelected: (i) => setState(() => _tab = i),
+      destinations: const [
+        NavigationDestination(key: Key('tab-rooms'), icon: Icon(Icons.house_outlined), label: 'Rooms'),
+        NavigationDestination(key: Key('tab-items'), icon: Icon(Icons.inventory_2_outlined), label: 'Items'),
+        NavigationDestination(key: Key('tab-warranties'), icon: Icon(Icons.verified_outlined), label: 'Warranties'),
+      ],
+    );
+    if (lv < 99) {
+      return Scaffold(
+        appBar: AppBar(title: Row(mainAxisSize: MainAxisSize.min, children: [
+          if (lv >= 1) const BrandLogo(size: 30),
+          const SizedBox(width: 8),
+          const Text('Housetally'),
+        ]), actions: [
+          if (lv >= 8) IconButton(key: const Key('open-settings'), icon: const Icon(Icons.settings_outlined), onPressed: () {}),
+        ]),
+        body: Column(children: [
+          if (lv >= 2) const _ValueHero(),
+          Expanded(child: lv >= 5 ? RoomsTab(onAddItem: (roomId) => _addItem(roomId: roomId)) : const SizedBox()),
+        ]),
+        floatingActionButton: lv >= 6
+            ? FloatingActionButton.extended(key: const Key('add-item'), icon: const Icon(Icons.add_a_photo_outlined), label: const Text('Add item'), onPressed: _addItem)
+            : null,
+        bottomNavigationBar: lv >= 7 ? AdDock(child: nav) : nav,
+      );
+    }
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -241,7 +277,7 @@ class _ValueHero extends ConsumerWidget {
             ),
           ),
           const SizedBox(width: 8),
-          AnimatedDonut(
+          if (homeDiagLevel.value >= 3) AnimatedDonut(
             key: const Key('room-chart'),
             size: 104,
             thickness: 14,
@@ -252,7 +288,7 @@ class _ValueHero extends ConsumerWidget {
                       ChartPart(values[i].$2.toDouble(), palette[i % palette.length]),
                   ],
             semanticsLabel: label,
-            center: SizedBox(width: 54, height: 54, child: AnimatedScene(paint: _mascot, aspectRatio: 1)),
+            center: homeDiagLevel.value >= 4 ? SizedBox(width: 54, height: 54, child: AnimatedScene(paint: _mascot, aspectRatio: 1)) : null,
           ),
         ],
       ),
