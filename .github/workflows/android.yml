@@ -190,8 +190,8 @@ jobs:
       matrix:
         device: [pixel_6]
         part: [release]
-        api: [35]
-        gpu: [swiftshader_indirect, guest, swangle_indirect]
+        api: [34, 35]
+        gpu: [swiftshader_indirect]
     env:
       APP_DIR: apps/home_inventory
       PLAY_PACKAGE: com.shuklamrajat.housetally
@@ -373,6 +373,11 @@ jobs:
           # memory, crashes) and the emulator's own crash files.
           sudo dmesg 2>/dev/null | grep -iE "killed process|out of memory|oom|segfault|qemu|emulator" | tail -n 40 > "$d/host-kernel.txt" || true
           ls -la /tmp/android-runner/ > "$d/emulator-crash-files.txt" 2>/dev/null || true
+          # Diagnosis: the last guest messages before the emulator died.
+          tail -n 400 "$OUT/live-logcat.txt" > "$d/live-logcat-tail.txt" 2>/dev/null || true
+          tail -n 200 "$OUT/live-kmsg.txt" > "$d/live-kmsg-tail.txt" 2>/dev/null || true
+          tail -n 120 "$OUT/host-watch.txt" > "$d/host-watch-tail.txt" 2>/dev/null || true
+          find /tmp/android-runner -type f -newer "$GITHUB_WORKSPACE/README.md" -printf '%p %s\n' > "$d/emulator-crash-dumps.txt" 2>/dev/null || true
           git -C "$dest" add -A
           git -C "$dest" -c user.name=ci -c user.email=ci@users.noreply.github.com commit -qm "Emulator proof $RUN $DEVICE $PART"
           for i in 1 2 3 4 5; do

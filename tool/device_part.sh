@@ -54,6 +54,12 @@ timeout 20 adb shell pm disable-user --user 0 com.google.android.googlesdksetup 
 timeout 10 adb shell input keyevent KEYCODE_HOME || true
 
 if [ "$part" = release ]; then
+  # Diagnosis (diag branch): stream the guest log and kernel messages, and
+  # watch the host, so the last lines before an emulator death are kept.
+  timeout 20 adb root >/dev/null 2>&1; sleep 3; timeout 60 adb wait-for-device
+  (adb logcat -v threadtime > "$out/live-logcat.txt" 2>&1 &)
+  (adb shell cat /proc/kmsg > "$out/live-kmsg.txt" 2>&1 &)
+  (while true; do date +%T; ps -o pid,rss,pcpu,cmd -C qemu-system-x86_64 2>/dev/null | cut -c1-120; free -m | sed -n 2,3p; sleep 2; done > "$out/host-watch.txt" 2>&1 &)
   # Start from a phone that has never seen the app, so the install, the first
   # screen and the "no onboarding after reopening" checks mean what they say.
   timeout 60 adb uninstall "$pkg" >/dev/null 2>&1 || true
