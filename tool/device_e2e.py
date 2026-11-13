@@ -528,7 +528,14 @@ def housetally():
     wait('Add item')
     priced = lambda v: (lambda: any(v in l for n in nodes() for l in n['lines']))
     check('add: the lawn mower ($300.00) counts toward the home value', True, priced('300.00')())
-    mower = lambda: bool(find('Lawn mower'))
+
+    def mower():
+        """The lawn mower's row. Items are listed on the Items tab (the Rooms
+        tab shows rooms), so go there when the row is not on screen."""
+        if find('Lawn mower'):
+            return True
+        tap('Tab 2 of 3', timeout=5)
+        return bool(find('Lawn mower'))
     open_row(mower, lambda: tap('Lawn mower'), 'Edit item')
     type_into('Price paid', '350', 5)
     hide_keyboard()
