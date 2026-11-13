@@ -362,23 +362,35 @@ void openBoxScene(Canvas c, Size s, SceneFrame f) {
     (Icons.tv_rounded, const Color(0xFF455A64)),
     (Icons.watch_rounded, _gold),
   ];
-  final tp = TextPainter(textDirection: TextDirection.ltr);
+  // Each icon is laid out once at its full size and grown with a canvas
+  // scale. Laying text out at a new font size every frame makes the GPU
+  // build fresh glyphs each frame, which is slow on phones and was the one
+  // thing this scene did that the others don't.
+  final full = w * 0.13;
   for (var i = 0; i < 3; i++) {
     final t = phase(f.intro, 0.35 + i * 0.15, 0.7 + i * 0.1, Curves.easeOutBack);
+    if (t <= 0.01) continue;
     final hop = (math.sin((f.loop * 2 + i / 3) * 2 * math.pi) * 0.5 + 0.5) * h * 0.04;
     final p = Offset(w * (0.38 + i * 0.12), box.top - h * 0.12 * t - hop);
     final icon = things[i].$1;
-    tp.text = TextSpan(
-      text: String.fromCharCode(icon.codePoint),
-      style: TextStyle(
-        fontSize: w * 0.13 * t,
-        fontFamily: icon.fontFamily,
-        package: icon.fontPackage,
-        color: things[i].$2,
+    final tp = TextPainter(
+      textDirection: TextDirection.ltr,
+      text: TextSpan(
+        text: String.fromCharCode(icon.codePoint),
+        style: TextStyle(
+          fontSize: full,
+          fontFamily: icon.fontFamily,
+          package: icon.fontPackage,
+          color: things[i].$2,
+        ),
       ),
-    );
-    tp.layout();
-    tp.paint(c, p - Offset(tp.width / 2, tp.height / 2));
+    )..layout();
+    c.save();
+    c.translate(p.dx, p.dy);
+    c.scale(t);
+    tp.paint(c, Offset(-tp.width / 2, -tp.height / 2));
+    c.restore();
+    tp.dispose();
   }
   final card = Paint()..shader = const LinearGradient(colors: [Color(0xFFD7A86E), Color(0xFFB9824A)]).createShader(box);
   final b = Rect.fromLTRB(box.left, base - box.height * pop, box.right, base);

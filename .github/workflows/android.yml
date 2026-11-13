@@ -190,7 +190,7 @@ jobs:
       matrix:
         device: [pixel_6]
         part: [release]
-        api: [34, 36]
+        api: [35]
         gpu: [swiftshader_indirect]
         audio: ['-noaudio']
     env:
