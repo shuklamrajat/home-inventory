@@ -504,17 +504,18 @@ class _DonutPainter extends CustomPainter {
       final end = math.min(start + full, -math.pi / 2 + sweepAll);
       if (end <= start) break;
       final sweep = math.max(0.0, end - start - (parts.length > 1 ? gap : 0));
-      canvas.drawArc(
-        ring,
-        start,
-        sweep,
-        false,
-        Paint()
-          ..color = p.color
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = thickness
-          ..strokeCap = parts.length > 1 ? StrokeCap.butt : StrokeCap.round,
-      );
+      final paint = Paint()
+        ..color = p.color
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = thickness
+        ..strokeCap = parts.length > 1 ? StrokeCap.butt : StrokeCap.round;
+      if (sweep >= 2 * math.pi - 1e-3) {
+        // A whole ring is a circle. A full-turn arc with round caps draws two
+        // caps on top of each other, which some GPUs choke on.
+        canvas.drawCircle(ring.center, ring.width / 2, paint..strokeCap = StrokeCap.butt);
+      } else if (sweep > 0) {
+        canvas.drawArc(ring, start, sweep, false, paint);
+      }
       start += full;
     }
   }
