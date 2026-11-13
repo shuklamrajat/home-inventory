@@ -1,0 +1,22 @@
+{
+  "package": "com.shuklamrajat.housetally",
+  "device": "pixel_6 API 35",
+  "apk": "universal.apk",
+  "passed": false,
+  "emulator_stopped": true,
+  "android_stalls_not_the_app": [],
+  "checks": [
+    {
+      "check": "the session finished without an error",
+      "want": null,
+      "got": "the emulator stopped answering",
+      "ok": false
+    },
+    {
+      "check": "logcat has no crash for this app",
+      "want": [],
+      "got": [],
+      "ok": true
+    }
+  ]
+}
