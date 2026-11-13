@@ -1,0 +1,7 @@
+<14>[  298.829062] logd: start watching /data/system/packages.list ...
+<14>[  298.831418] logd: ReadPackageList, total packages: 217
+<14>[  298.866923] init: ... started service 'artd' has pid 4516
+<14>[  298.868387] init: Control message: Processed ctl.interface_start for 'aidl/artd' from pid: 145 (/system/bin/servicemanager)
+<14>[  301.948050] servicemanager: Caller(pid=4576,uid=10209,sid=u:r:untrusted_app:s0:c209,c256,c512,c768) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+<12>[  302.591812] servicemanager: Isolated app with UID 99001 requested 'network_management', but the service is not allowed for isolated apps.
+<12>[  302.622761] servicemanager: Isolated app with UID 99001 requested 'content_capture', but the service is not allowed for isolated apps.
