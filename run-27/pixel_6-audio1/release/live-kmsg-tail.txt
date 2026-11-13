@@ -1,0 +1,11 @@
+<14>[  347.099794] logd: logdr: UID=0 GID=0 PID=5276 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+<14>[  347.841105] init: ... started service 'artd' has pid 5319
+<14>[  347.842052] init: Control message: Processed ctl.interface_start for 'aidl/artd' from pid: 207 (/system/bin/servicemanager)
+<14>[  348.308851] logd: start watching /data/system/packages.list ...
+<14>[  348.310446] logd: ReadPackageList, total packages: 224
+<14>[  350.994097] servicemanager: Caller(pid=5381,uid=10216,sid=u:r:untrusted_app:s0:c216,c256,c512,c768) Found mapper/ranchu in device VINTF manifest.
+<12>[  351.931093] servicemanager: Isolated app with UID 99001 requested 'connectivity', but the service is not allowed for isolated apps.
+<12>[  352.332897] servicemanager: Isolated app with UID 99001 requested 'uimode', but the service is not allowed for isolated apps.
+<14>[  368.259037] servicemanager: Caller(pid=5556,uid=0,sid=u:r:su:s0) Found android.hardware.graphics.allocator.IAllocator/default in device VINTF manifest.
+<14>[  368.263437] servicemanager: Caller(pid=5556,uid=0,sid=u:r:su:s0) Found android.hardware.graphics.allocator.IAllocator/default in device VINTF manifest.
+<14>[  368.268649] servicemanager: Caller(pid=5556,uid=0,sid=u:r:su:s0) Found mapper/ranchu in device VINTF manifest.

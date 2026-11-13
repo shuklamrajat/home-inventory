@@ -1,0 +1,400 @@
+11-13 14:15:02.173   643  1740 D SafetySourceDataValidat: No cert check requested for package com.google.android.permissioncontroller
+11-13 14:15:02.173  1690  1904 I AiAiEcho: EchoTargets: 
+11-13 14:15:02.173  1690  1904 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 14:15:02.173  1690  1904 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 14:15:02.173  1690  1904 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 14:15:02.225  1690  1904 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 14:15:02.226  1690  1904 I AiAiEcho: EchoTargets: 
+11-13 14:15:02.226  1690  1904 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 14:15:02.226  1690  1904 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 14:15:02.226  1690  1904 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 14:15:02.226  1690  1904 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-13 14:15:02.227  1298  1298 D SsBaseTemplateCard: No text view can be set up
+11-13 14:15:02.227  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:02.227  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:02.227  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:02.227  1298  1298 I SsBaseTemplateCard: Secondary card pane is null
+11-13 14:15:02.227  1690  1904 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-13 14:15:02.227  1006  1006 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-13 14:15:03.135  5558  5558 W AccessibilityNodeInfoDumper: Fetch time: 6ms
+11-13 14:15:03.137   643  1924 V AccessibilityManagerService: onUserStateChangedLocked for userId: 0, forceUpdate: false
+11-13 14:15:03.141   643  1924 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+11-13 14:15:03.141   643  1924 D AccessibilityManagerService: restoreCurrentUserForTestAutomationIfNeededLocked(): ignoring because device doesn't support visible background users
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.141   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.142   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.142   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.142   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.142   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:03.142   643   643 D BatterySaverPolicy: accessibility changed to false, updating policy.
+11-13 14:15:03.145  5558  5567 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+11-13 14:15:03.145  5558  5571 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+11-13 14:15:03.145  5558  5569 W IPCThreadState: call to talkWithDriver in joinThreadPool returned error: -9 (Bad file descriptor), FD: -1
+11-13 14:15:03.145  5558  5558 D AndroidRuntime: Shutting down VM
+11-13 14:15:03.149  1690  2008 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-13 14:15:03.150  1690  1904 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 14:15:03.150  1690  1904 I AiAiEcho: EchoTargets: 
+11-13 14:15:03.150  1690  1904 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 14:15:03.150  1690  1904 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 14:15:03.151  1690  1904 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 14:15:03.152  1690  1904 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 14:15:03.152  1690  1904 I AiAiEcho: EchoTargets: 
+11-13 14:15:03.152  1690  1904 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 14:15:03.152  1690  1904 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 14:15:03.152  1690  1904 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 14:15:03.153  1690  1904 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-13 14:15:03.153  1690  1904 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-13 14:15:03.154  1006  1006 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-13 14:15:03.154  1298  1298 D SsBaseTemplateCard: No text view can be set up
+11-13 14:15:03.154  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:03.154  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:03.154  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:03.154  1298  1298 I SsBaseTemplateCard: Secondary card pane is null
+11-13 14:15:03.216   643   747 D ActivityManager: freezing 1008 com.google.android.permissioncontroller
+11-13 14:15:04.263   643   672 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:04.388   643   672 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:04.487  1196  1451 D SatelliteController: iisInCarrierRoamingNbIotNtn: satellite is disabled
+11-13 14:15:04.764   517   993 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000004) and output flags (00000002)
+11-13 14:15:04.765   517   993 I AF::PthrPatchRecord: creating track with enforcement level 0
+11-13 14:15:04.769   517   993 W AF::TrackHandle: OpPlayAudio: not muting track:55 usage:13 for service UID 1000
+11-13 14:15:04.800  5381  5381 I ajat.housetally: AssetManager2(0x7b1125cc4658) locale list changing from [] to [en-US]
+11-13 14:15:05.145   643  1885 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
+11-13 14:15:05.176   467  5584 W libprocessgroup: A JoinCgroup action in the SystemMemoryProcess profile is used for controller memory in the cgroup v2 hierarchy and will be ignored
+11-13 14:15:05.242   517   621 D AudioFlinger: mixer(0x759b21cc3770) throttle end: throttle time(33)
+11-13 14:15:05.808   643   672 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:05.908  5590  5590 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 0 <<<<<<
+11-13 14:15:05.914  5590  5590 I AndroidRuntime: Using default boot image
+11-13 14:15:05.914  5590  5590 I AndroidRuntime: Leaving lock profiling enabled
+11-13 14:15:05.917  5590  5590 I app_process: Core platform API reporting enabled, enforcing=false
+11-13 14:15:05.917  5590  5590 I app_process: Using CollectorTypeCMC GC.
+11-13 14:15:05.984  5590  5590 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+11-13 14:15:05.994  5590  5590 D nativeloader: Load libicu_jni.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+11-13 14:15:05.994  5590  5590 D app_process: u_setTimeZoneFilesDirectory("/apex/com.android.tzdata/etc/tz/versioned/9/icu") succeeded. 
+11-13 14:15:05.994  5590  5590 D app_process: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt76l.dat
+11-13 14:15:05.995  5590  5590 D nativeloader: Load libjavacore.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+11-13 14:15:05.995  5590  5590 D nativeloader: Load libopenjdk.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+11-13 14:15:05.997  5590  5590 W app_process: Unexpected CPU variant for x86: x86_64.
+11-13 14:15:05.997  5590  5590 W app_process: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+11-13 14:15:05.998  5590  5590 W app_process: ClassLoaderContext shared library size mismatch. Expected=2, found=0 (PCL[]{PCL[/system/framework/android.test.base.jar*2789897741]#PCL[/system/framework/android.test.mock.jar*3361312393]} | PCL[])
+11-13 14:15:05.998  5590  5590 W app_process: ClassLoaderContext classpath size mismatch. expected=0, found=1 (PCL[]{PCL[/system/framework/android.test.runner.jar*895143020]#PCL[/system/framework/android.test.base.jar*2789897741]} | PCL[/system/framework/android.test.runner.jar*895143020])
+11-13 14:15:06.017  5590  5590 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-13 14:15:06.017  5590  5590 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+11-13 14:15:06.019  5590  5590 I AconfigPackage: android.media.swcodec.flags is mapped to com.android.media.swcodec
+11-13 14:15:06.019  5590  5590 I AconfigPackage: com.google.android.settings.simplemode.flags is mapped to system_ext
+11-13 14:15:06.019  5590  5590 I AconfigPackage: com.google.android.systemui is mapped to system_ext
+11-13 14:15:06.019  5590  5590 I AconfigPackage: com.google.android.apps.nexuslauncher is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.settings.accessibility is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.settings.flags is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.google.android.apps.miphone.aiai.matchmaker.overview.ui is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.google.android.settings.flags is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.launcher3 is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.wallpaper is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.settings.media_drm is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.systemui.accessibility.accessibilitymenu is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.settings.keyboard is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.server.policy.feature.flags is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.settings.factory_reset is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.google.android.haptics.flags is mapped to system_ext
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.permission.flags is mapped to com.android.permission
+11-13 14:15:06.020  5590  5590 I AconfigPackage: com.android.icu is mapped to com.android.i18n
+11-13 14:15:06.021  5590  5590 I AconfigPackage: com.android.appsearch.flags is mapped to com.android.appsearch
+11-13 14:15:06.021  5590  5590 I AconfigPackage: android.uprobestats.mainline.flags is mapped to com.android.uprobestats
+11-13 14:15:06.021  5590  5590 I AconfigPackage: android.provider.flags is mapped to com.android.configinfrastructure
+11-13 14:15:06.021  5590  5590 I AconfigPackage: com.android.server.deviceconfig is mapped to com.android.configinfrastructure
+11-13 14:15:06.022  5590  5590 I AconfigPackage: com.android.nfc.flags is mapped to system
+11-13 14:15:06.022  5590  5590 I AconfigPackage: android.app.admin.flags is mapped to system
+11-13 14:15:06.022  5590  5590 I AconfigPackage: android.database.sqlite is mapped to system
+11-13 14:15:06.022  5590  5590 I AconfigPackage: com.android.providers.calendar is mapped to system
+11-13 14:15:06.022  5590  5590 I AconfigPackage: com.android.server.power.feature.flags is mapped to system
+11-13 14:15:06.022  5590  5590 I AconfigPackage: com.android.media.performance.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.app.contextualsearch.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.app.ondeviceintelligence.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.media.projection.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.companion is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.service.controls.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.text.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.providers.contactkeys.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.intentresolver is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.companion.virtualdevice.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.uprobestats.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.net.thread.platform.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.view.contentprotection.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.server.dreams is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.graphics.surfaceflinger.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.hardware.input is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.sdk is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.input.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.tracing is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.server.biometrics is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.view.contentcapture.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.app.job is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.content.res is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.net.platform.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.aconfig.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.graphics.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.server.app is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.speech.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.server.stats is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.hardware.biometrics is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.car.feature is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.adpf is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.location.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.settingslib.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.managedprovisioning.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: android.app.assist.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.server.net is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.settingslib.widget.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.internal.camera.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.hardware.libsensor.flags is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.internal.jank is mapped to system
+11-13 14:15:06.023  5590  5590 I AconfigPackage: com.android.providers.settings is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.multiuser is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.power.optimization is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.calllogbackup is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.media.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.graphics.libvulkan.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.app.appfunctions.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.app.smartspace.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.providers.contacts.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.shell.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.media.aaudio is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.hardware.radio is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.google.wear.services.infra.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: suspend_service.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.media.midi is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.libcore.readonly is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.settingslib.widget.selectorwithwidgetpreference.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.service.notification is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.systemui.shared is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.app.jank is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.app.wearable is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.media.audio is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.service.chooser is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.compat is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.alarm is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.apex.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.service.quickaccesswallet is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.app.usage is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.accessibility is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.app.supervision.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.utils is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.chre.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.content.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.media.codec is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.internal.os is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.nfc.nci.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.app is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.security.keystore2 is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.crashrecovery.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.tradeinmode.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.hardware.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.telecom.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.settingslib.media.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.policy is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.media.audiopolicy is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.egg.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.internal.compat.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.security is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.service.autofill is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.example.android.aconfig.demo.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.view.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.companion.virtual.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.aconfig_new_storage is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.feature.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.systemui is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.power.batterysaver is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.widget.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.media.editing.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.media.codec.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.powerstats is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.graphics.egl.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.media.audioserver is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.deviceidle is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.nfc is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.permission.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.service.voice.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.content.pm is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.power.hint is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.os is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.service.dreams is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.graphics.libgui.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.hardware.usb.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.provider is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.job is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.internal.foldables.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.internal.telephony.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.webkit is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.credentials.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.display.feature.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.notification is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.appwidget.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.frameworks.sensorservice.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.printspooler.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.window.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.adaptiveauth is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.net.wifi.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.media.tv.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.usb.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.os.vibrator is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.hardware.devicestate.feature.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.usage is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.server is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.wm.shell is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.view.inputmethod is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.graphics.hwui.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.backup is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.internal.pm.pkg.component.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.view.accessibility is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.google.wear.sdk is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: android.media.audio is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.server.am is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.media.playback.flags is mapped to system
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.art.flags is mapped to com.android.art
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.libcore is mapped to com.android.art
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.media.extractor.flags is mapped to com.android.media
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.media.mainline.flags is mapped to com.android.media
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.wifi.flags is mapped to com.android.wifi
+11-13 14:15:06.024  5590  5590 I AconfigPackage: com.android.org.conscrypt.flags is mapped to com.android.conscrypt
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.android.healthfitness.flags is mapped to com.android.healthfitness
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.google.android.input.twoshay.flags is mapped to vendor
+11-13 14:15:06.025  5590  5590 I AconfigPackage: libgooglecamerahal.flags is mapped to vendor
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.android.ipsec.flags is mapped to com.android.ipsec
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.android.nfc.module.flags is mapped to com.android.nfcservices
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.android.adservices.ondevicepersonalization.flags is mapped to com.android.ondevicepersonalization
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.android.bluetooth.flags is mapped to com.android.bt
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.android.devicelock.flags is mapped to com.android.devicelock
+11-13 14:15:06.025  5590  5590 I AconfigPackage: android.os.profiling is mapped to com.android.profiling
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.android.os.statsd.flags is mapped to com.android.os.statsd
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.android.cellbroadcastreceiver.flags is mapped to com.android.cellbroadcast
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.android.adservices.flags is mapped to com.android.adservices
+11-13 14:15:06.025  5590  5590 I AconfigPackage: com.android.sdksandbox.flags is mapped to com.android.adservices
+11-13 14:15:06.027  5590  5590 I AconfigPackage: com.android.uwb.flags is mapped to com.android.uwb
+11-13 14:15:06.027  5590  5590 I AconfigPackage: com.android.ranging.flags is mapped to com.android.uwb
+11-13 14:15:06.027  5590  5590 I AconfigPackage: android.graphics.pdf.flags is mapped to com.android.mediaprovider
+11-13 14:15:06.027  5590  5590 I AconfigPackage: com.android.providers.media.flags is mapped to com.android.mediaprovider
+11-13 14:15:06.027  5590  5590 I AconfigPackage: android.graphics.pdf.flags.readonly is mapped to com.android.mediaprovider
+11-13 14:15:06.027  5590  5590 I AconfigPackage: com.android.net.ct.flags is mapped to com.android.tethering
+11-13 14:15:06.027  5590  5590 I AconfigPackage: com.android.net.flags is mapped to com.android.tethering
+11-13 14:15:06.027  5590  5590 I AconfigPackage: android.net.vcn is mapped to com.android.tethering
+11-13 14:15:06.027  5590  5590 I AconfigPackage: com.android.nearby.flags is mapped to com.android.tethering
+11-13 14:15:06.027  5590  5590 I AconfigPackage: android.net.http is mapped to com.android.tethering
+11-13 14:15:06.027  5590  5590 I AconfigPackage: com.android.net.thread.flags is mapped to com.android.tethering
+11-13 14:15:06.028  5590  5590 I AconfigPackage: com.android.system.virtualmachine.flags is mapped to com.android.virt
+11-13 14:15:06.028  5590  5590 E FeatureFlagsImplExport: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+11-13 14:15:06.030  5590  5590 D UiAutomationConnection: Created on user UserHandle{0}
+11-13 14:15:06.031  5590  5590 I UiAutomation: Initialized for user 0 on display 0
+11-13 14:15:06.031  5590  5590 W UiAutomation: Created with deprecatead constructor, assumes DEFAULT_DISPLAY
+11-13 14:15:06.032   643  1885 D AccessibilityManagerService: changeCurrentUserForTestAutomationIfNeededLocked(0): ignoring because device doesn't support visible background users
+11-13 14:15:06.032   643  1885 I UiAutomationManager: Registering UiTestAutomationService (id=com.android.server.accessibility/UiAutomation, flags=0x0) when called by user 0
+11-13 14:15:06.032   643  1885 V AccessibilityManagerService: onUserStateChangedLocked for userId: 0, forceUpdate: false
+11-13 14:15:06.033   643  1885 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+11-13 14:15:06.033  1690  2008 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-13 14:15:06.033  1690  1904 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 14:15:06.033  1690  1904 I AiAiEcho: EchoTargets: 
+11-13 14:15:06.033  1690  1904 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 14:15:06.033  1690  1904 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 14:15:06.034  1690  1904 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 14:15:06.034  1690  1904 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 14:15:06.034  1690  1904 I AiAiEcho: EchoTargets: 
+11-13 14:15:06.034  1690  1904 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 14:15:06.034  1690  1904 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 14:15:06.034  1690  1904 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 14:15:06.034  1690  1904 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.035   643   643 D BatterySaverPolicy: accessibility changed to true, updating policy.
+11-13 14:15:06.035  1690  1904 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-13 14:15:06.037  1006  1006 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-13 14:15:06.038  5590  5602 V UiAutomation: Init UiAutomation@f15fc01[id=4, displayId=0, flags=0]
+11-13 14:15:06.052  1298  1298 D SsBaseTemplateCard: No text view can be set up
+11-13 14:15:06.052  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:06.052  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:06.052  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:06.052  1298  1298 I SsBaseTemplateCard: Secondary card pane is null
+11-13 14:15:06.059   643  1740 V AccessibilityManagerService: onUserStateChangedLocked for userId: 0, forceUpdate: false
+11-13 14:15:06.060   643  1740 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.060   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.061   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.061   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.061   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.061   643   643 W IPCThreadState: Sending oneway calls to frozen process.
+11-13 14:15:06.061  1690  2427 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+11-13 14:15:06.063  1690  1904 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 14:15:06.066  1690  1904 I AiAiEcho: EchoTargets: 
+11-13 14:15:06.066  1690  1904 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 14:15:06.066  1690  1904 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 14:15:06.066  1690  1904 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 14:15:06.066  1690  1904 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-13 14:15:06.066  1690  1904 I AiAiEcho: EchoTargets: 
+11-13 14:15:06.066  1690  1904 I AiAiEcho: Filtered by AiAi flag check: 
+11-13 14:15:06.066  1690  1904 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-13 14:15:06.066  1690  1904 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-13 14:15:06.067  1690  1904 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-13 14:15:06.067  1298  1298 D SsBaseTemplateCard: No text view can be set up
+11-13 14:15:06.067  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:06.067  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:06.067  1298  1298 D SsBaseTemplateCard: Passed-in item info is null
+11-13 14:15:06.067  1298  1298 I SsBaseTemplateCard: Secondary card pane is null
+11-13 14:15:06.120  1690  1904 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-13 14:15:06.120  1006  1006 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-13 14:15:06.279   467  5585 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-13 14:15:06.279   467  5585 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+11-13 14:15:06.387   467  5585 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-13 14:15:06.387   467  5585 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
