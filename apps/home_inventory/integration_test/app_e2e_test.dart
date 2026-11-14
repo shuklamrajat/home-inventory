@@ -336,7 +336,25 @@ void main() {
             (w.key as ValueKey<String>).value.startsWith('warranty-') &&
             !(w.key as ValueKey<String>).value.startsWith('warranty-state-'),
       );
-      final order = tiles.evaluate().map((e) => e.widget.key).toList();
+      // The list is built lazily, so on a phone the last rows only exist once
+      // scrolled to. Walk down the list and record each row the first time it
+      // is built, in screen order.
+      final order = <Key>[];
+      final warrantyList = find.ancestor(of: tiles.first, matching: find.byType(Scrollable)).first;
+      for (var step = 0; step < 12; step++) {
+        final built = tiles.evaluate().toList()
+          ..sort((a, b) => tester.getTopLeft(find.byWidget(a.widget)).dy
+              .compareTo(tester.getTopLeft(find.byWidget(b.widget)).dy));
+        for (final e in built) {
+          if (!order.contains(e.widget.key)) order.add(e.widget.key!);
+        }
+        final pos = tester.state<ScrollableState>(warrantyList).position;
+        if (pos.pixels >= pos.maxScrollExtent) break;
+        await tester.drag(warrantyList, const Offset(0, -250));
+        await tester.pumpAndSettle();
+      }
+      await tester.drag(warrantyList, const Offset(0, 5000));
+      await tester.pumpAndSettle();
       log.check(
         'warranty list order',
         [
