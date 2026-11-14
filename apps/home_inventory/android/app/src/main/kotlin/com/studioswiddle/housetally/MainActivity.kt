@@ -1,4 +1,4 @@
-package com.shuklamrajat.housetally
+package com.studioswiddle.housetally
 
 import io.flutter.embedding.android.FlutterActivity
 

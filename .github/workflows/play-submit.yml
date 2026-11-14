@@ -25,7 +25,7 @@ jobs:
   submit:
     runs-on: ubuntu-latest
     env:
-      PACKAGE: com.shuklamrajat.housetally
+      PACKAGE: com.studioswiddle.housetally
       STORE: store/home_inventory
     steps:
       - uses: actions/checkout@v4
