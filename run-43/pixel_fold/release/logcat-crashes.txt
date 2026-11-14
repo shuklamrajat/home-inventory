@@ -1,0 +1,14 @@
+11-14 03:59:26.055   560   585 W ActivityManager: Slow operation: 164ms so far, now at startProcess: done creating new process record
+11-14 03:59:26.055   560   585 W ActivityManager: Slow operation: 164ms so far, now at startProcess: stepping in to startProcess
+11-14 03:59:26.061   560   585 W ActivityManager: Slow operation: 170ms so far, now at startProcess: done starting proc!
+11-14 03:59:59.868   560  1561 W ActivityManager: Slow operation: 193ms so far, now at startProcess: done updating battery stats
+11-14 03:59:59.868   560  1561 W ActivityManager: Slow operation: 193ms so far, now at startProcess: building log message
+11-14 03:59:59.868   560  1561 W ActivityManager: Slow operation: 193ms so far, now at startProcess: starting to update pids map
+11-14 03:59:59.868   560  1561 W ActivityManager: Slow operation: 193ms so far, now at startProcess: done updating pids map
+11-14 04:00:00.263   560   595 W ActivityManager: Slow operation: 588ms so far, now at startProcess: returned from zygote!
+11-14 04:02:10.037   560   595 W ActivityManager: Slow operation: 87ms so far, now at startProcess: asking zygote to start proc
+11-14 04:02:10.126   560   595 W ActivityManager: Slow operation: 176ms so far, now at startProcess: returned from zygote!
+11-14 04:02:10.139   560   595 W ActivityManager: Slow operation: 189ms so far, now at startProcess: done updating battery stats
+11-14 04:02:10.139   560   595 W ActivityManager: Slow operation: 189ms so far, now at startProcess: building log message
+11-14 04:02:10.139   560   595 W ActivityManager: Slow operation: 189ms so far, now at startProcess: starting to update pids map
+11-14 04:02:10.179   560   595 W ActivityManager: Slow operation: 229ms so far, now at startProcess: done updating pids map
